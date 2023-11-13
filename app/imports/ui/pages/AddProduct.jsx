@@ -44,14 +44,18 @@ const AddProduct = () => {
     <Container className="py-3">
       <Row className="justify-content-center">
         <Col xs={5}>
-          <Col className="text-center"><h2>Add Stuff</h2></Col>
+          <Col className="text-center"><h2>Add Product</h2></Col>
           <AutoForm ref={ref => { fRef = ref; }} schema={bridge} onSubmit={data => submit(data, fRef)}>
             <Card>
               <Card.Body>
-                <TextField name="name" />
-                <TextField name="image" />
-                <TextField name="price" />
-                <TextField name="category" />
+                <Row>
+                  <Col><TextField name="name"/></Col>
+                  <Col><TextField name="image"/></Col>
+                </Row>
+                <Row>
+                  <Col><TextField name="price"/></Col>
+                  <Col><TextField name="category"/></Col>
+                </Row>
                 <LongTextField name="description" />
                 <SubmitField value="Submit" />
                 <ErrorsField />
