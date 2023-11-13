@@ -24,10 +24,10 @@ const AddProduct = () => {
 
   // On submit, insert the data.
   const submit = (data, formRef) => {
-    const { name, price, image, category, description } = data;
+    const { name, price, image, condition, color, quantity } = data;
     const owner = Meteor.user().username;
     Products.collection.insert(
-      { name, price, image, category, description, owner },
+      { name, price, image, condition, color, quantity, owner },
       (error) => {
         if (error) {
           swal('Error', error.message, 'error');
