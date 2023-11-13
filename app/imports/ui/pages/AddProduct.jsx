@@ -1,6 +1,6 @@
 import React from 'react';
 import { Card, Col, Container, Row } from 'react-bootstrap';
-import { AutoForm, ErrorsField, LongTextField, SubmitField, TextField } from 'uniforms-bootstrap5';
+import { AutoForm, ErrorsField, SubmitField, TextField } from 'uniforms-bootstrap5';
 import swal from 'sweetalert';
 import { Meteor } from 'meteor/meteor';
 import SimpleSchema2Bridge from 'uniforms-bridge-simple-schema-2';
@@ -12,8 +12,9 @@ const formSchema = new SimpleSchema({
   name: String,
   price: Number,
   image: String,
-  category: String,
-  description: String,
+  condition: String,
+  color: String,
+  quantity: Number,
 });
 
 const bridge = new SimpleSchema2Bridge(formSchema);
@@ -48,16 +49,13 @@ const AddProduct = () => {
           <AutoForm ref={ref => { fRef = ref; }} schema={bridge} onSubmit={data => submit(data, fRef)}>
             <Card>
               <Card.Body>
-                <Row>
-                  <Col><TextField name="name"/></Col>
-                  <Col><TextField name="image"/></Col>
-                </Row>
-                <Row>
-                  <Col><TextField name="price"/></Col>
-                  <Col><TextField name="category"/></Col>
-                </Row>
-                <LongTextField name="description" />
-                <SubmitField value="Submit" />
+                <TextField name="image"/>
+                <TextField name="name"/>
+                <TextField name="price"/>
+                <TextField name="condition"/>
+                <TextField name="color"/>
+                <TextField name="quantity"/>
+                <SubmitField className="text-center" value="Submit" />
                 <ErrorsField />
               </Card.Body>
             </Card>

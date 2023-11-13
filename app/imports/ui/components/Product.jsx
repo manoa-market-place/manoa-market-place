@@ -21,8 +21,9 @@ Product.propTypes = {
     name: PropTypes.string,
     price: PropTypes.number,
     image: PropTypes.string,
-    category: PropTypes.string,
-    description: PropTypes.string,
+    condition: PropTypes.string,
+    color: PropTypes.string,
+    quantity: PropTypes.number,
     // _id: PropTypes.string,
   }).isRequired,
 };
