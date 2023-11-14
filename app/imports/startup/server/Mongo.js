@@ -1,5 +1,6 @@
 import { Meteor } from 'meteor/meteor';
 import { Stuffs } from '../../api/stuff/Stuff.js';
+import { Products } from '../../api/product/Products';
 
 /* eslint-disable no-console */
 
@@ -16,3 +17,16 @@ if (Stuffs.collection.find().count() === 0) {
     Meteor.settings.defaultData.forEach(data => addData(data));
   }
 }
+
+const addProduct = (product) => {
+  console.log(` Adding: ${product.name} (${product.owner})`);
+  Products.collection.insert(product);
+};
+
+if (Products.collection.find().count() === 0) {
+  if (Meteor.settings.defaultProducts) {
+    console.log('Creating default product');
+    Meteor.settings.defaultProducts.forEach(product => addProduct(product));
+  }
+}
+
