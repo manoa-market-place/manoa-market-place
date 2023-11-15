@@ -1,16 +1,19 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Card } from 'react-bootstrap';
+import { Card, Image } from 'react-bootstrap';
 
 /** Renders a single row in the List Stuff table. See pages/ListStuff.jsx. */
 const Product = ({ product }) => (
   <Card className="h-100">
     <Card.Header>
-      <Card.Title>{product.name}</Card.Title>
-      <Card.Subtitle>{product.price}</Card.Subtitle>
+      <Image src={product.image} />
+      <Card.Title>Name: {product.name}</Card.Title>
+      <Card.Subtitle>${product.price}</Card.Subtitle>
     </Card.Header>
     <Card.Body>
-      <Card.Text>{product.description}</Card.Text>
+      <Card.Text>Condition: {product.condition}</Card.Text>
+      <Card.Text>Color: {product.color}</Card.Text>
+      <Card.Text>Quantity: {product.quantity}</Card.Text>
     </Card.Body>
   </Card>
 );
