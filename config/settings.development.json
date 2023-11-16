@@ -20,10 +20,19 @@
       "name": "Wallet",
       "price": 20,
       "image": "images/sample-wallet.png",
-      "condition": "new",
+      "condition": "used",
       "color": "black",
       "quantity": 1,
       "owner": "john@foo.com"
+    },
+    {
+      "name": "Exclusive Wallet",
+      "price": 50,
+      "image": "images/sample-wallet.png",
+      "condition": "new",
+      "color": "black",
+      "quantity": 1,
+      "owner": "admin@foo.com"
     }
   ]
 }

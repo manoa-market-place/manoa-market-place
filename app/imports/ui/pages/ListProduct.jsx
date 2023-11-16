@@ -2,21 +2,21 @@ import React from 'react';
 import { Meteor } from 'meteor/meteor';
 import { Col, Container, Row } from 'react-bootstrap';
 import { useTracker } from 'meteor/react-meteor-data';
-import LoadingSpinner from '../components/LoadingSpinner';
-import Product from '../components/Product';
 import { Products } from '../../api/product/Products';
+import Product from '../components/Product';
+import LoadingSpinner from '../components/LoadingSpinner';
 
-/* Renders a table containing all of the Stuff documents. Use <StuffItem> to render each row. */
-const MyProduct = () => {
+/* Renders a table containing all of the Product documents. Use <Product> to render each row. */
+const ListProduct = () => {
   // useTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker
   const { ready, products } = useTracker(() => {
     // Note that this subscription will get cleaned up
     // when your component is unmounted or deps change.
-    // Get access to Stuff documents.
+    // Get access to Product documents.
     const subscription = Meteor.subscribe(Products.userPublicationName);
     // Determine if the subscription is ready
     const rdy = subscription.ready();
-    // Get the Stuff documents
+    // Get the Product documents
     const productItems = Products.collection.find({}).fetch();
     return {
       products: productItems,
@@ -39,4 +39,4 @@ const MyProduct = () => {
   ) : <LoadingSpinner />);
 };
 
-export default MyProduct;
+export default ListProduct;

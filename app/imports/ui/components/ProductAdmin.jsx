@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Card, Image } from 'react-bootstrap';
 
 /** Renders a single row in the List Product table. See pages/ListProduct.jsx. */
-const Product = ({ product }) => (
+const ProductAdmin = ({ product }) => (
   <Card className="h-100">
     <Card.Header>
       <Image fluid src={product.image} />
@@ -14,12 +14,13 @@ const Product = ({ product }) => (
       <Card.Text>Condition: {product.condition}</Card.Text>
       <Card.Text>Color: {product.color}</Card.Text>
       <Card.Text>Quantity: {product.quantity}</Card.Text>
+      <footer className="blockquote-footer pt-4">{product.owner}</footer>
     </Card.Body>
   </Card>
 );
 
 // Require a document to be passed to this component.
-Product.propTypes = {
+ProductAdmin.propTypes = {
   product: PropTypes.shape({
     name: PropTypes.string,
     price: PropTypes.number,
@@ -28,8 +29,8 @@ Product.propTypes = {
     color: PropTypes.string,
     quantity: PropTypes.number,
     owner: PropTypes.string,
-    _id: PropTypes.string,
+    // _id: PropTypes.string,
   }).isRequired,
 };
 
-export default Product;
+export default ProductAdmin;
