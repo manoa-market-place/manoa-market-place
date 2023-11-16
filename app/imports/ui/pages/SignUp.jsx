@@ -13,10 +13,27 @@ import { AutoForm, ErrorsField, SubmitField, TextField } from 'uniforms-bootstra
 const SignUp = ({ location }) => {
   const [error, setError] = useState('');
   const [redirectToReferer, setRedirectToRef] = useState(false);
+  const [imagePreview, setImagePreview] = useState(null);
+  const [base64Image, setBase64Image] = useState('');
+
+  const handleFileChange = (event) => {
+    const file = event.target.files[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        setBase64Image(reader.result);
+        setImagePreview(reader.result);
+      };
+      reader.readAsDataURL(file);
+    }
+  };
 
   const schema = new SimpleSchema({
     email: String,
     password: String,
+    phone: String,
+    fullName: String,
+    profileImage: String,
   });
   const bridge = new SimpleSchema2Bridge(schema);
 
@@ -40,19 +57,25 @@ const SignUp = ({ location }) => {
     return <Navigate to={from} />;
   }
   return (
-    <Container id="signup-page" className="py-3">
+    <Container className="py-3" id="signup-page">
       <Row className="justify-content-center">
-        <Col xs={5}>
+        <Col xs="{5}">
           <Col className="text-center">
             <h2>Register your account</h2>
           </Col>
-          <AutoForm schema={bridge} onSubmit={data => submit(data)}>
+          <AutoForm onSubmit={data => submit(data)} schema={bridge}>
             <Card>
               <Card.Body>
+                <TextField label="Full Name" name="fullName" placeholder="Enter your full name" />
+                <TextField label="Phone Number" name="phone" placeholder="Enter your phone number" />
                 <TextField name="email" placeholder="E-mail address" />
                 <TextField name="password" placeholder="Password" type="password" />
-                <ErrorsField />
-                <SubmitField />
+                <p>Profile Image</p>
+                <input accept="image/*" type="file" onChange={handleFileChange} />
+                {imagePreview ? <img src={imagePreview} alt="Preview" style={{ maxWidth: '200px', maxHeight: '200px' }} /> : ''}
+                {base64Image ? <TextField name="profileImage" value={base64Image} hidden /> : ''}
+                <ErrorsField className="py-3" />
+                <SubmitField className="py-3" />
               </Card.Body>
             </Card>
           </AutoForm>
