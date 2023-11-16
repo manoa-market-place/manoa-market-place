@@ -33,10 +33,12 @@ const ListStuffAdmin = () => {
                 <th>Quantity</th>
                 <th>Condition</th>
                 <th>Owner</th>
+                <th>Edit</th>
+                <th>remove</th>
               </tr>
             </thead>
             <tbody>
-              {stuffs.map((stuff) => <StuffItemAdmin key={stuff._id} stuff={stuff} />)}
+              {stuffs.map((stuff) => <StuffItemAdmin key={stuff._id} stuff={stuff} collection={Stuffs.collection} />)}
             </tbody>
           </Table>
         </Col>
