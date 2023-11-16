@@ -49,12 +49,12 @@ const AddProduct = () => {
           <AutoForm ref={ref => { fRef = ref; }} schema={bridge} onSubmit={data => submit(data, fRef)}>
             <Card>
               <Card.Body>
-                <TextField name="image"/>
-                <TextField name="name"/>
-                <TextField name="price"/>
-                <TextField name="condition"/>
-                <TextField name="color"/>
-                <TextField name="quantity"/>
+                <TextField name="image" />
+                <TextField name="name" />
+                <TextField name="price" />
+                <TextField name="condition" />
+                <TextField name="color" />
+                <TextField name="quantity" />
                 <SubmitField className="text-center" value="Submit" />
                 <ErrorsField />
               </Card.Body>
