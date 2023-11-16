@@ -1,10 +1,11 @@
 import React from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
 import { CartFill, HouseAddFill, PeopleFill } from 'react-bootstrap-icons';
+import { Link } from 'react-router-dom';
 
 /* A simple static component to render some text for the landing page. */
-const Landing = () => (
-  <Container id="landing-page" fluid className="py-2">
+const Home = () => (
+  <Container id="home-page" fluid className="py-2">
     <Row className="text-center py-5">
       <Col>
         <h1>Manoa Marketplace</h1>
@@ -24,19 +25,19 @@ const Landing = () => (
     </Row>
     <Row className="text-center">
       <Col xs={4}>
-        <h3 className="pt-5">Goods</h3>
+        <h3 className="pt-5"><Link to="/goods">Goods</Link></h3>
         <p>Look for something to buy/sell.</p>
       </Col>
       <Col xs={4}>
-        <h3 className="pt-5">Services</h3>
+        <h3 className="pt-5"><Link to="/services">Services</Link></h3>
         <p>Advertise a skill for commission.</p>
       </Col>
       <Col xs={4}>
-        <h3 className="pt-5">Accommodations</h3>
+        <h3 className="pt-5"><Link to="/accommodations">Accommodations</Link></h3>
         <p>Look for a housing accommodation.</p>
       </Col>
     </Row>
   </Container>
 );
 
-export default Landing;
+export default Home;

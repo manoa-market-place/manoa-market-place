@@ -35,9 +35,9 @@ const SignIn = () => {
 
   // Render the signin form.
   // console.log('render', error, redirect);
-  // if correct authentication, redirect to page instead of login screen
+  // if correct authentication, redirect to home page instead of login screen
   if (redirect) {
-    return (<Navigate to="/" />);
+    return (<Navigate to="/home" />);
   }
   // Otherwise return the Login form.
   return (

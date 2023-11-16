@@ -16,6 +16,7 @@ import LoadingSpinner from '../components/LoadingSpinner';
 import AddProduct from '../pages/AddProduct';
 import ListProduct from '../pages/ListProduct';
 import ListProductAdmin from '../pages/ListProductAdmin';
+import Home from '../pages/Home';
 
 /** Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
 const App = () => {
@@ -34,10 +35,14 @@ const App = () => {
           <Route path="/signin" element={<SignIn />} />
           <Route path="/signup" element={<SignUp />} />
           <Route path="/signout" element={<SignOut />} />
-          <Route path="/home" element={<ProtectedRoute><Landing /></ProtectedRoute>} />
+          <Route path="/home" element={<ProtectedRoute><Home /></ProtectedRoute>} />
+          <Route path="/profile" element={<ProtectedRoute><NotAuthorized /></ProtectedRoute>} />
+          <Route path="/goods" element={<ProtectedRoute><NotAuthorized /></ProtectedRoute>} />
+          <Route path="/services" element={<ProtectedRoute><NotAuthorized /></ProtectedRoute>} />
+          <Route path="/accommodations" element={<ProtectedRoute><NotAuthorized /></ProtectedRoute>} />
+          <Route path="/add" element={<ProtectedRoute><AddProduct /></ProtectedRoute>} />
           <Route path="/myproduct" element={<ProtectedRoute><ListProduct /></ProtectedRoute>} />
           <Route path="/admin" element={<AdminProtectedRoute ready={ready}><ListProductAdmin /></AdminProtectedRoute>} />
-          <Route path="/add" element={<ProtectedRoute><AddProduct /></ProtectedRoute>} />
           <Route path="/notauthorized" element={<NotAuthorized />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
@@ -80,7 +85,7 @@ ProtectedRoute.propTypes = {
 };
 
 ProtectedRoute.defaultProps = {
-  children: <Landing />,
+  children: <Home />,
 };
 
 // Require a component and location to be passed to each AdminProtectedRoute.
@@ -91,7 +96,7 @@ AdminProtectedRoute.propTypes = {
 
 AdminProtectedRoute.defaultProps = {
   ready: false,
-  children: <Landing />,
+  children: <Home />,
 };
 
 export default App;

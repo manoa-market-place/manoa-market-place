@@ -15,25 +15,44 @@ const NavBar = () => {
   return (
     <Navbar bg="dark" expand="lg">
       <Container>
-        <Navbar.Brand as={NavLink} to="/">
-          <Image
-            alt="UHM Logo"
-            src="images/uhm-logo.png"
-            width="50"
-            height="50"
-            className="d-inline-block"
-          />
-        </Navbar.Brand>
+        {currentUser ? ([
+          <Navbar.Brand as={NavLink} to="/home">
+            <Image
+              alt="UHM Logo"
+              src="images/uhm-logo.png"
+              width="50"
+              height="50"
+              className="d-inline-block"
+            />
+          </Navbar.Brand>,
+        ]) : ([
+          <Navbar.Brand as={NavLink} to="/">
+            <Image
+              alt="UHM Logo"
+              src="images/uhm-logo.png"
+              width="50"
+              height="50"
+              className="d-inline-block"
+            />
+          </Navbar.Brand>,
+        ])}
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto justify-content-start">
             {currentUser ? ([
-              <Nav.Link id="add-product-nav" as={NavLink} to="/add" key="add">Add Product</Nav.Link>,
-              <Nav.Link id="my-product-nav" as={NavLink} to="/myproduct" key="myproduct">My Product</Nav.Link>,
+              <Nav.Link id="goods-nav" as={NavLink} to="/goods" key="goods">Goods</Nav.Link>,
+              <Nav.Link id="services-nav" as={NavLink} to="/services" key="goods">Services</Nav.Link>,
+              <Nav.Link id="accommodations-nav" as={NavLink} to="/accommodations" key="accommodations">Accommodations</Nav.Link>,
             ]) : ''}
             {Roles.userIsInRole(Meteor.userId(), 'admin') ? (
               <Nav.Link id="list-product-admin-nav" as={NavLink} to="/admin" key="admin">Admin</Nav.Link>
             ) : ''}
+          </Nav>
+          <Nav className="me-auto justify-content-center">
+            {currentUser ? ([
+              <Nav.Link id="add-product-nav" as={NavLink} to="/add" key="add">Add Product</Nav.Link>,
+              <Nav.Link id="my-product-nav" as={NavLink} to="/myproduct" key="myproduct">My Product</Nav.Link>,
+            ]) : ''}
           </Nav>
           <Nav className="justify-content-end">
             {currentUser === '' ? (
@@ -51,11 +70,13 @@ const NavBar = () => {
               </NavDropdown>
             ) : (
               <NavDropdown id="navbar-current-user" title={currentUser}>
+                <NavDropdown.Item id="navbar-profile" as={NavLink} to="/profile">
+                  Profile
+                </NavDropdown.Item>
                 <NavDropdown.Item id="navbar-sign-out" as={NavLink} to="/signout">
-                  <BoxArrowRight />
+                  Sign out
                   {' '}
-                  Sign
-                  out
+                  <BoxArrowRight />
                 </NavDropdown.Item>
               </NavDropdown>
             )}
