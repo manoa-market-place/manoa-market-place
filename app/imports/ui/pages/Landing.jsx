@@ -1,6 +1,6 @@
 import React from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
-import { CartFill, HouseAddFill, PeopleFill } from 'react-bootstrap-icons';
+import { CartFill, PeopleFill } from 'react-bootstrap-icons';
 
 /* A simple static component to render some text for the landing page. */
 const Landing = () => (
