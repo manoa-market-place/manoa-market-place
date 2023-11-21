@@ -13,28 +13,21 @@ const Home = () => (
       </Col>
     </Row>
     <Row className="text-center py-2">
-      <Col xs={4}>
+      <Col xs={6}>
         <CartFill size={75} />
       </Col>
-      <Col xs={4}>
+      <Col xs={6}>
         <PeopleFill size={75} />
-      </Col>
-      <Col xs={4}>
-        <HouseAddFill size={75} />
       </Col>
     </Row>
     <Row className="text-center">
-      <Col xs={4}>
+      <Col xs={6}>
         <h3 className="pt-5"><Link to="/goods">Goods</Link></h3>
         <p>Look for something to buy/sell.</p>
       </Col>
-      <Col xs={4}>
+      <Col xs={6}>
         <h3 className="pt-5"><Link to="/services">Services</Link></h3>
         <p>Advertise a skill for commission.</p>
-      </Col>
-      <Col xs={4}>
-        <h3 className="pt-5"><Link to="/accommodations">Accommodations</Link></h3>
-        <p>Look for a housing accommodation.</p>
       </Col>
     </Row>
   </Container>
