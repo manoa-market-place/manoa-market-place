@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
-import { Button } from 'react-bootstrap';
+import { Button, Card, Image } from 'react-bootstrap';
 import { Trash } from 'react-bootstrap-icons';
 /** Renders a single row in the List product (Admin) table. See pages/ListProductAdmin.jsx. */
 const ProductItemAdmin = ({ product, collection }) => {
@@ -11,26 +11,35 @@ const ProductItemAdmin = ({ product, collection }) => {
   };
 
   return (
-    <tr>
-      <td>{product.name}</td>
-      <td>{product.quantity}</td>
-      <td>{product.condition}</td>
-      <td>{product.owner}</td>
-      <td>
-        <Link to={`/edit/${product._id}`}>Edit</Link>
-      </td>
-      <td><Button variant="danger" onClick={() => removeItem(product._id)}><Trash /></Button></td>
-    </tr>
+    <Card className="h-100">
+      <Card.Header>
+        <Image fluid src={product.image} />
+        <Card.Title>Name: {product.name}</Card.Title>
+        <Card.Subtitle>${product.price}</Card.Subtitle>
+      </Card.Header>
+      <Card.Body>
+        <Card.Text>Condition: {product.condition}</Card.Text>
+        <Card.Text>Color: {product.color}</Card.Text>
+        <Card.Text>Quantity: {product.quantity}</Card.Text>
+        <Card.Text>
+          <Link to={`/edit/${product._id}`}>Edit</Link>
+        </Card.Text>
+        <Button variant="danger" onClick={() => removeItem(product._id)}><Trash /></Button>
+        <footer className="blockquote-footer pt-4">{product.owner}</footer>
+      </Card.Body>
+    </Card>
   );
-
 };
 
 // Require a document to be passed to this component.
 ProductItemAdmin.propTypes = {
   product: PropTypes.shape({
     name: PropTypes.string,
-    quantity: PropTypes.number,
+    price: PropTypes.number,
+    image: PropTypes.string,
     condition: PropTypes.string,
+    color: PropTypes.string,
+    quantity: PropTypes.number,
     _id: PropTypes.string,
     owner: PropTypes.string,
   }).isRequired,

@@ -4,7 +4,8 @@ import { useTracker } from 'meteor/react-meteor-data';
 import { Col, Container, Row } from 'react-bootstrap';
 import { Products } from '../../api/product/Products';
 import LoadingSpinner from '../components/LoadingSpinner';
-import ProductAdmin from '../components/ProductAdmin';
+// import ProductAdmin from '../components/ProductAdmin';
+import ProductItemAdmin from '../components/ProductItemAdmin';
 
 /* Renders a table containing all of the product documents. Use <productItemAdmin> to render each row. */
 const ListProductAdmin = () => {
@@ -31,7 +32,7 @@ const ListProductAdmin = () => {
         </Col>
       </Row>
       <Row xs={1} md={2} lg={3}>
-        {products.map((product) => (<Col key={product._id}><ProductAdmin product={product} /></Col>))}
+        {products.map((product) => (<Col key={product._id}><ProductItemAdmin product={product} collection={Products.collection} /></Col>))}
       </Row>
     </Container>
   ) : <LoadingSpinner />);
