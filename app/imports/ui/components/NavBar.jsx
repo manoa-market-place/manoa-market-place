@@ -79,6 +79,7 @@ const NavBar = () => {
                 )}
                 <NavDropdown.Item id="navbar-sign-out" as={NavLink} to="/signout">
                   Sign out
+                  {' '}
                   <BoxArrowRight />
                 </NavDropdown.Item>
               </NavDropdown>
