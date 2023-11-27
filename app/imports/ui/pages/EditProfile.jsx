@@ -32,7 +32,7 @@ const EditProfile = () => {
 
   return ready ? (
     <Container>
-      <Row>
+      <Row className="justify-content-center">
         <Col xs={10}>
           <Col className="text-center"><h2>Your Profile</h2></Col>
           <AutoForm schema={bridge} onSubmit={data => submit(data)} model={doc}>

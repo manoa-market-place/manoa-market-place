@@ -15,27 +15,15 @@ const NavBar = () => {
   return (
     <Navbar bg="dark" expand="lg">
       <Container>
-        {currentUser ? ([
+        {currentUser ? (
           <Navbar.Brand as={NavLink} to="/home">
-            <Image
-              alt="UHM Logo"
-              src="images/uhm-logo.png"
-              width="50"
-              height="50"
-              className="d-inline-block"
-            />
-          </Navbar.Brand>,
-        ]) : ([
+            <Image src="images/uhm-logo.png" className="d-inline-block" width="50" height="50" alt="UHM Logo" />
+          </Navbar.Brand>
+        ) : (
           <Navbar.Brand as={NavLink} to="/">
-            <Image
-              alt="UHM Logo"
-              src="images/uhm-logo.png"
-              width="50"
-              height="50"
-              className="d-inline-block"
-            />
-          </Navbar.Brand>,
-        ])}
+            <Image src="images/uhm-logo.png" className="d-inline-block" width="50" height="50" alt="UHM Logo" />
+          </Navbar.Brand>
+        )}
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto justify-content-start">
@@ -51,7 +39,7 @@ const NavBar = () => {
               ) : ([
                 <Nav.Link id="add-product-nav" as={NavLink} to="/add" key="add">Add Product</Nav.Link>,
                 <Nav.Link id="my-product-nav" as={NavLink} to="/myproduct" key="myproduct">My Product</Nav.Link>,
-              ])},
+              ])}
             </Nav>
           ) : ''}
           <Nav className="justify-content-end">

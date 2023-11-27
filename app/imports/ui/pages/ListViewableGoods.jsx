@@ -4,14 +4,14 @@ import { useTracker } from 'meteor/react-meteor-data';
 import { Col, Container, Row } from 'react-bootstrap';
 import { Products } from '../../api/product/Products';
 import LoadingSpinner from '../components/LoadingSpinner';
-import ProductItemAdmin from '../components/ProductItemAdmin';
+import ViewableGood from '../components/ViewableGood';
 
 /* Renders a table containing all of the product documents. Use <productItemAdmin> to render each row. */
-const ListProductAdmin = () => {
+const ListViewableGoods = () => {
   // useTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker
   const { products, ready } = useTracker(() => {
     // Get access to product documents.
-    const subscription = Meteor.subscribe(Products.adminPublicationName);
+    const subscription = Meteor.subscribe(Products.allPublicationName);
     // Determine if the subscription is ready
     const rdy = subscription.ready();
     // Get the product documents
@@ -21,20 +21,23 @@ const ListProductAdmin = () => {
       ready: rdy,
     };
   }, []);
+
+  const goods = products.filter((product => (product.owner !== Meteor.user().username)));
+
   return (ready ? (
     <Container className="py-3">
       <Row className="justify-content-center">
         <Col md={7}>
           <Col className="text-center">
-            <h2>List Product (Admin)</h2>
+            <h2>Goods for Sale</h2>
           </Col>
         </Col>
       </Row>
       <Row xs={1} md={2} lg={3}>
-        {products.map((product) => (<Col key={product._id}><ProductItemAdmin product={product} collection={Products.collection} /></Col>))}
+        {goods.map((product) => (<Col key={product._id}><ViewableGood good={product} /></Col>))}
       </Row>
     </Container>
   ) : <LoadingSpinner />);
 };
 
-export default ListProductAdmin;
+export default ListViewableGoods;

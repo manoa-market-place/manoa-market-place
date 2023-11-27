@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 
 /** Renders a single row in the List Stuff table. See pages/ListStuff.jsx. */
 const Profile = ({ profile }) => (
-  <Card className="h-100">
+  <Card border="info" className="h-100">
     <Card.Header>
       <Card.Title>{profile.firstName} {profile.lastName}</Card.Title>
       <Card.Subtitle>{profile.phoneNumber}</Card.Subtitle>

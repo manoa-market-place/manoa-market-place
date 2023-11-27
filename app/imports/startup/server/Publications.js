@@ -38,6 +38,14 @@ Meteor.publish(UserProfile.adminPublicationName, function () {
   return this.ready();
 });
 
+// All-level publication.
+Meteor.publish(Products.allPublicationName, function () {
+  if (this.userId) {
+    return Products.collection.find();
+  }
+  return this.ready();
+});
+
 // alanning:roles publication
 // Recommended code to publish roles for each user.
 Meteor.publish(null, function () {
