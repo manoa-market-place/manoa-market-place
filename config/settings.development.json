@@ -7,12 +7,25 @@
     },
     {
       "email": "john@foo.com",
-      "password": "changeme",
-      "userInfo": {
-        "firstName": "John",
-        "lastName": "Wick",
-        "phoneNumber": "1234567890"
-      }
+      "password": "changeme"
+    },
+    {
+      "email": "jane@foo.com",
+      "password": "changeme"
+    }
+  ],
+  "defaultUserProfiles": [
+    {
+      "firstName": "John",
+      "lastName": "Wick",
+      "phoneNumber": "1234567890",
+      "owner": "john@foo.com"
+    },
+    {
+      "firstName": "Jane",
+      "lastName": "Dole",
+      "phoneNumber": "1231231230",
+      "owner": "jane@foo.com"
     }
   ],
   "defaultProducts": [
@@ -32,7 +45,7 @@
       "condition": "new",
       "color": "black",
       "quantity": 1,
-      "owner": "admin@foo.com"
+      "owner": "jane@foo.com"
     }
   ]
 }
