@@ -6,6 +6,7 @@ import { Trash } from 'react-bootstrap-icons';
 /** Renders a single row in the List product (Admin) table. See pages/ListProductAdmin.jsx. */
 const ProductItemAdmin = ({ product, collection }) => {
   const removeItem = (docID) => {
+    // eslint-disable-next-line no-console
     console.log(`The item to remove is ${docID}`);
     collection.remove(docID);
   };
