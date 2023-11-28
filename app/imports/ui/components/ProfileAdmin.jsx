@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 import { Card } from 'react-bootstrap';
 
 /** Renders a single row in the List Stuff table. See pages/ListStuff.jsx. */
-const Profile = ({ profile }) => (
-  <Card className="h-100">
+const ProfileAdmin = ({ profile }) => (
+  <Card border="warning" className="h-100">
     <Card.Header>
       <Card.Title>{profile.firstName} {profile.lastName}</Card.Title>
       <Card.Subtitle>{profile.phoneNumber}</Card.Subtitle>
@@ -17,7 +17,7 @@ const Profile = ({ profile }) => (
 );
 
 // Require a document to be passed to this component.
-Profile.propTypes = {
+ProfileAdmin.propTypes = {
   profile: PropTypes.shape({
     firstName: PropTypes.string,
     lastName: PropTypes.string,
@@ -27,4 +27,4 @@ Profile.propTypes = {
   }).isRequired,
 };
 
-export default Profile;
+export default ProfileAdmin;

@@ -1,16 +1,24 @@
 {
   "defaultAccounts": [
     {
-      "email": "admin@foo.com",
+      "email": "admin@hawaii.edu",
       "password": "changeme",
       "role": "admin"
     },
     {
-      "email": "john@foo.com",
+      "email": "john@hawaii.edu",
       "password": "changeme"
     },
     {
-      "email": "jane@foo.com",
+      "email": "jane@hawaii.edu",
+      "password": "changeme"
+    },
+    {
+      "email": "jaden@hawaii.edu",
+      "password": "changeme"
+    },
+    {
+      "email": "jack@hawaii.edu",
       "password": "changeme"
     }
   ],
@@ -19,33 +27,63 @@
       "firstName": "John",
       "lastName": "Wick",
       "phoneNumber": "1234567890",
-      "owner": "john@foo.com"
+      "owner": "john@hawaii.edu"
     },
     {
       "firstName": "Jane",
       "lastName": "Dole",
       "phoneNumber": "1231231230",
-      "owner": "jane@foo.com"
+      "owner": "jane@hawaii.edu"
+    },
+    {
+      "firstName": "Jaden",
+      "lastName": "Bryson",
+      "phoneNumber": "1231231230",
+      "owner": "johnson@hawaii.edu"
+    },
+    {
+      "firstName": "Jack",
+      "lastName": "Hall",
+      "phoneNumber": "1231231230",
+      "owner": "jack@hawaii.edu"
     }
   ],
   "defaultProducts": [
     {
       "name": "Wallet",
       "price": 20,
-      "image": "images/sample-wallet.png",
+      "image": "images/samples/wallet.png",
       "condition": "used",
       "color": "black",
       "quantity": 1,
-      "owner": "john@foo.com"
+      "owner": "john@hawaii.edu"
     },
     {
-      "name": "Exclusive Wallet",
-      "price": 50,
-      "image": "images/sample-wallet.png",
-      "condition": "new",
-      "color": "black",
+      "name": "Wood Bookcase",
+      "price": 100,
+      "image": "images/samples/bookcase.jpg",
+      "condition": "barely used",
+      "color": "brown",
       "quantity": 1,
-      "owner": "jane@foo.com"
+      "owner": "jane@hawaii.edu"
+    },
+    {
+      "name": "Hot Chocolate Maker",
+      "price": 25,
+      "image": "images/samples/hot-chocolate-maker.jpg",
+      "condition": "used",
+      "color": "silver",
+      "quantity": 1,
+      "owner": "jaden@hawaii.edu"
+    },
+    {
+      "name": "Wooden Paddle",
+      "price": 400,
+      "image": "/images/samples/wooden-paddle.jpg",
+      "condition": "barely used",
+      "color": "brown",
+      "quantity": 1,
+      "owner": "jack@hawaii.edu"
     }
   ],
   "defaultServices": [

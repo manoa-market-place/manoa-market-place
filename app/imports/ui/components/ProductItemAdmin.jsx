@@ -10,24 +10,25 @@ const ProductItemAdmin = ({ product, collection }) => {
     console.log(`The item to remove is ${docID}`);
     collection.remove(docID);
   };
-
   return (
-    <Card className="h-100">
+    <Card border="warning" className="h-100">
       <Card.Header>
-        <Image fluid src={product.image} />
+        <Image fluid thumbnail src={product.image} />
         <Card.Title>Name: {product.name}</Card.Title>
         <Card.Subtitle>${product.price}</Card.Subtitle>
       </Card.Header>
       <Card.Body>
+        <Card.Text>Description: {product.description}</Card.Text>
         <Card.Text>Condition: {product.condition}</Card.Text>
         <Card.Text>Color: {product.color}</Card.Text>
         <Card.Text>Quantity: {product.quantity}</Card.Text>
         <Card.Text>
           <Link to={`/edit/${product._id}`}>Edit</Link>
         </Card.Text>
-        <Button variant="danger" onClick={() => removeItem(product._id)}><Trash /></Button>
-        <footer className="blockquote-footer pt-4">{product.owner}</footer>
+        <Button variant="danger" className="float-start" onClick={() => removeItem(product._id)}><Trash /></Button>
+        <Card.Text className="float-end">Status: {product.status}</Card.Text>
       </Card.Body>
+      <footer className="blockquote-footer px-3 pt-4">{product.owner}</footer>
     </Card>
   );
 };
@@ -41,8 +42,10 @@ ProductItemAdmin.propTypes = {
     condition: PropTypes.string,
     color: PropTypes.string,
     quantity: PropTypes.number,
-    _id: PropTypes.string,
     owner: PropTypes.string,
+    status: PropTypes.string,
+    description: PropTypes.string,
+    _id: PropTypes.string,
   }).isRequired,
   // eslint-disable-next-line react/forbid-prop-types
   collection: PropTypes.object.isRequired,
