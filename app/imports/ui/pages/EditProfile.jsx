@@ -31,11 +31,11 @@ const EditProfile = () => {
   };
 
   return ready ? (
-    <Container>
+    <Container id="edit-profile-page">
       <Row className="justify-content-center">
         <Col xs={10}>
           <Col className="text-center"><h2>Your Profile</h2></Col>
-          <AutoForm schema={bridge} onSubmit={data => submit(data)} model={doc}>
+          <AutoForm id="edit-profile-form" schema={bridge} onSubmit={data => submit(data)} model={doc}>
             <Card>
               <Card.Body>
                 <Row>
