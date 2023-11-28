@@ -15,7 +15,7 @@ const ListViewableGoods = () => {
     const ProductsSubscription = Meteor.subscribe(Products.allPublicationName);
     const CartSubscription = Meteor.subscribe(ProductsInCart.userPublicationName);
     // Determine if the subscription is ready
-    const rdy = ProductsSubscription.ready() && CartSubscription.ready();;
+    const rdy = ProductsSubscription.ready() && CartSubscription.ready();
     // Get the product documents
     const productItems = Products.collection.find({}).fetch();
     const CartItems = ProductsInCart.collection.find({}).fetch();

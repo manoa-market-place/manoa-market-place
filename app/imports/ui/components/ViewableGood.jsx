@@ -1,13 +1,27 @@
 import React from 'react';
+import { Meteor } from 'meteor/meteor';
+import swal from 'sweetalert';
 import PropTypes from 'prop-types';
 import { Button, Card, Image } from 'react-bootstrap';
+import { ProductsInCart } from '../../api/product/ProductsInCart';
 
 /** Renders a single row in the List good table. See pages/ListViewableGoods.jsx. */
-const ViewableGood = ({ good, cartCollection }) => {
+const ViewableGood = ({ good }) => {
   const addToCart = (productId) => {
+    const checkedOutBy = Meteor.user().username;
+    const checkedOutAt = new Date();
     // eslint-disable-next-line no-console
-    console.log(`Add to cart: ${productId}`);
-    cartCollection.insert();
+    console.log(`${checkedOutBy} added ${productId} to cart at ${checkedOutAt}`);
+    ProductsInCart.collection.insert(
+      { productId, checkedOutBy, checkedOutAt },
+      (error) => {
+        if (error) {
+          swal('Error', error.message, 'error');
+        } else {
+          swal('Success', `${good.name} added to your cart`, 'success');
+        }
+      },
+    );
   };
 
   return (
@@ -40,11 +54,6 @@ ViewableGood.propTypes = {
     owner: PropTypes.string,
     _id: PropTypes.string,
   }).isRequired,
-  cartCollection: PropTypes.arrayOf(PropTypes.shape({
-    userId: PropTypes.string,
-    productId: PropTypes.string,
-    checkedOut: PropTypes.instanceOf(Date),
-  })).isRequired,
 };
 
 export default ViewableGood;

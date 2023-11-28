@@ -12,8 +12,8 @@ class ProductsInCartCollection {
     this.collection = new Mongo.Collection(this.name);
     // Define the structure of each document in the collection.
     this.schema = new SimpleSchema({
-      userId: String,
       productId: String,
+      checkedOutBy: String,
       checkedOutAt: Date,
     });
     // Attach the schema to the collection, so all attempts to insert a document are checked against schema.
