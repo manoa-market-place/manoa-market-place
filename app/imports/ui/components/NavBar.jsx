@@ -4,7 +4,7 @@ import { useTracker } from 'meteor/react-meteor-data';
 import { NavLink } from 'react-router-dom';
 import { Roles } from 'meteor/alanning:roles';
 import { Container, Image, Nav, Navbar, NavDropdown } from 'react-bootstrap';
-import { BoxArrowRight, PersonFill, PersonPlusFill } from 'react-bootstrap-icons';
+import { BoxArrowRight, Cart, PersonFill, PersonPlusFill } from 'react-bootstrap-icons';
 
 const NavBar = () => {
   // useTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker
@@ -17,11 +17,11 @@ const NavBar = () => {
       <Container>
         {currentUser ? (
           <Navbar.Brand as={NavLink} to="/home">
-            <Image src="images/uhm-logo.png" className="d-inline-block" width="50" height="50" alt="UHM Logo" />
+            <Image src="images/uhm-logo.png" id="logo-1" className="d-inline-block" width="50" height="50" alt="UHM Logo" />
           </Navbar.Brand>
         ) : (
           <Navbar.Brand as={NavLink} to="/">
-            <Image src="images/uhm-logo.png" className="d-inline-block" width="50" height="50" alt="UHM Logo" />
+            <Image src="images/uhm-logo.png" id="logo-2" className="d-inline-block" width="50" height="50" alt="UHM Logo" />
           </Navbar.Brand>
         )}
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -54,7 +54,13 @@ const NavBar = () => {
                   Sign up
                 </NavDropdown.Item>
               </NavDropdown>
-            ) : (
+            ) : ([
+              <NavDropdown id="cart-dropdown" title={<Cart />}>
+                <NavDropdown.Divider />
+                <NavDropdown.Item disabled id="total-dropdown">Total:</NavDropdown.Item>
+                <NavDropdown.Divider />
+                <NavDropdown.Item id="checkout-nav">Checkout</NavDropdown.Item>
+              </NavDropdown>,
               <NavDropdown id="navbar-current-user" title={currentUser}>
                 {Roles.userIsInRole(Meteor.userId(), 'admin') ? (
                   <NavDropdown.Item id="list-profiles" as={NavLink} to="/listprofiles">
@@ -70,8 +76,8 @@ const NavBar = () => {
                   {' '}
                   <BoxArrowRight />
                 </NavDropdown.Item>
-              </NavDropdown>
-            )}
+              </NavDropdown>,
+            ])}
           </Nav>
         </Navbar.Collapse>
       </Container>

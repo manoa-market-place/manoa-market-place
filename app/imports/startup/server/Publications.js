@@ -2,6 +2,7 @@ import { Meteor } from 'meteor/meteor';
 import { Roles } from 'meteor/alanning:roles';
 import { Products } from '../../api/product/Products';
 import { UserProfile } from '../../api/profile/UserProfile';
+import { ProductsInCart } from '../../api/product/ProductsInCart';
 
 // User-level publication.
 // If logged in, then publish documents owned by this user. Otherwise, publish nothing.
@@ -21,6 +22,13 @@ Meteor.publish(UserProfile.userPublicationName, function () {
   }
   return this.ready();
 });
+Meteor.publish(ProductsInCart.userPublicationName, function () {
+  if (this.userId) {
+    const username = Meteor.users.findOne(this.userId).username;
+    return ProductsInCart.collection.find({ owner: username });
+  }
+  return this.ready();
+});
 // Admin-level publication.
 // If logged in and with admin role, then publish all documents from all users. Otherwise, publish nothing.
 
@@ -34,6 +42,12 @@ Meteor.publish(Products.adminPublicationName, function () {
 Meteor.publish(UserProfile.adminPublicationName, function () {
   if (this.userId && Roles.userIsInRole(this.userId, 'admin')) {
     return UserProfile.collection.find();
+  }
+  return this.ready();
+});
+Meteor.publish(ProductsInCart.adminPublicationName, function () {
+  if (this.userId && Roles.userIsInRole(this.userId, 'admin')) {
+    return ProductsInCart.collection.find();
   }
   return this.ready();
 });

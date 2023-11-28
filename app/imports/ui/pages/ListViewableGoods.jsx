@@ -5,19 +5,23 @@ import { Col, Container, Row } from 'react-bootstrap';
 import { Products } from '../../api/product/Products';
 import LoadingSpinner from '../components/LoadingSpinner';
 import ViewableGood from '../components/ViewableGood';
+import { ProductsInCart } from '../../api/product/ProductsInCart';
 
 /* Renders a table containing all of the product documents. Use <productItemAdmin> to render each row. */
 const ListViewableGoods = () => {
   // useTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker
-  const { products, ready } = useTracker(() => {
+  const { products, cart, ready } = useTracker(() => {
     // Get access to product documents.
-    const subscription = Meteor.subscribe(Products.allPublicationName);
+    const ProductsSubscription = Meteor.subscribe(Products.allPublicationName);
+    const CartSubscription = Meteor.subscribe(ProductsInCart.userPublicationName);
     // Determine if the subscription is ready
-    const rdy = subscription.ready();
+    const rdy = ProductsSubscription.ready() && CartSubscription.ready();;
     // Get the product documents
     const productItems = Products.collection.find({}).fetch();
+    const CartItems = ProductsInCart.collection.find({}).fetch();
     return {
       products: productItems,
+      cart: CartItems,
       ready: rdy,
     };
   }, []);
@@ -34,7 +38,7 @@ const ListViewableGoods = () => {
         </Col>
       </Row>
       <Row xs={1} md={2} lg={3}>
-        {goods.map((product) => (<Col key={product._id} className="gy-4"><ViewableGood good={product} /></Col>))}
+        {goods.map((product) => (<Col key={product._id} className="gy-4"><ViewableGood good={product} cartCollection={cart} /></Col>))}
       </Row>
     </Container>
   ) : <LoadingSpinner />);
