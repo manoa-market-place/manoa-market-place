@@ -47,3 +47,20 @@ footer, footer a {
 .bg-dark a.dropdown-item {
   color: var(--matr-navbar-bg);
 }
+
+.service-page {
+  font-family: 'Arial', sans-serif;
+  padding: 20px;
+  margin-bottom: 30px;
+}
+
+.section {
+  margin-bottom: 30px;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.overview, .offer, .intro, .vendor-information {
+  background-color: #e9ecef;
+  color: #333;
+}
