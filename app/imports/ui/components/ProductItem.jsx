@@ -22,7 +22,7 @@ const ProductItem = ({ product, collection }) => {
         <Card.Text>Condition: {product.condition}</Card.Text>
         <Card.Text>Color: {product.color}</Card.Text>
         <Card.Text>Quantity: {product.quantity}</Card.Text>
-        <Button variant="danger" className="float-start" onClick={() => removeItem(product._id)} ><Trash /></Button>
+        <Button variant="danger" className="float-start" onClick={() => removeItem(product._id)}><Trash /></Button>
         <Card.Text className="float-end">Status: {product.status}</Card.Text>
       </Card.Body>
     </Card>
