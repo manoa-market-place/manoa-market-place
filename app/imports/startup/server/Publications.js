@@ -1,6 +1,7 @@
 import { Meteor } from 'meteor/meteor';
 import { Roles } from 'meteor/alanning:roles';
 import { Products } from '../../api/product/Products';
+import { Services } from '../../api/service/Services';
 import { UserProfile } from '../../api/profile/UserProfile';
 
 // User-level publication.
@@ -14,6 +15,15 @@ Meteor.publish(Products.userPublicationName, function () {
   }
   return this.ready();
 });
+
+Meteor.publish(Services.userPublicationName, function () {
+  if (this.userId) {
+    const username = Meteor.users.findOne(this.userId).username;
+    return Services.collection.find({ owner: username });
+  }
+  return this.ready();
+});
+
 Meteor.publish(UserProfile.userPublicationName, function () {
   if (this.userId) {
     const username = Meteor.users.findOne(this.userId).username;
@@ -27,6 +37,13 @@ Meteor.publish(UserProfile.userPublicationName, function () {
 Meteor.publish(Products.adminPublicationName, function () {
   if (this.userId && Roles.userIsInRole(this.userId, 'admin')) {
     return Products.collection.find();
+  }
+  return this.ready();
+});
+
+Meteor.publish(Services.adminPublicationName, function () {
+  if (this.userId && Roles.userIsInRole(this.userId, 'admin')) {
+    return Services.collection.find();
   }
   return this.ready();
 });
