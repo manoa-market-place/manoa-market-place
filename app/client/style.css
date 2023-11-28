@@ -50,13 +50,11 @@ footer, footer a {
 
 .service-page {
   font-family: 'Arial', sans-serif;
-  color: #333333;
-  background-color: #f4f4f4;
   padding: 20px;
+  margin-bottom: 30px;
 }
 
 .section {
-  background-color: #fff;
   margin-bottom: 30px;
   padding: 20px;
   border-radius: 8px;
@@ -65,8 +63,4 @@ footer, footer a {
 .overview, .offer, .intro, .vendor-information {
   background-color: #e9ecef;
   color: #333;
-}
-
-.text-center {
-  text-align: center;
 }

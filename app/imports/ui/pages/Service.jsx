@@ -7,7 +7,7 @@ const Service = () => {
       <h1 className="text-center">UH Manoa Market Services</h1>
       <section className="overview text-center">
         <h2>Overview</h2>
-        <p>Idle goods trading platform, let you anytime, anywhere to sell fast, buy good, reliable, easy to get idle business!</p>
+        <p>Idle goods trading platform, let you anytime, anywhere sell fast, buy well, reliable and easy to solve idle goods trouble!</p>
       </section>
 
       <section className="offer text-center">
