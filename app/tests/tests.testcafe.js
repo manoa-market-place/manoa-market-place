@@ -6,9 +6,9 @@ import { navBar } from './navbar.component';
 /* global fixture:false, test:false */
 
 /** Credentials for one of the sample users defined in settings.development.json. */
-const credentials = { username: 'john@foo.com', password: 'changeme' };
+const credentials = { username: 'john@hawaii.edu', password: 'changeme' };
 
-fixture('meteor-application-template-react localhost test with default db')
+fixture('manoa-market-place localhost test with default db')
   .page('http://localhost:3000');
 
 test('Test that landing page shows up', async (testController) => {
