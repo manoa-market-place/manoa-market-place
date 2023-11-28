@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Meteor } from 'meteor/meteor';
 import { useTracker } from 'meteor/react-meteor-data';
-import { Col, Container, Row } from 'react-bootstrap';
+import { Col, Container, Row, Form } from 'react-bootstrap';
 import { Products } from '../../api/product/Products';
 import LoadingSpinner from '../components/LoadingSpinner';
-import ViewableGood from '../components/Good';
+import Good from '../components/Good';
 import { ProductsInCart } from '../../api/product/ProductsInCart';
 
 /* Renders a table containing all of the product documents. Use <productItemAdmin> to render each row. */
@@ -25,23 +25,74 @@ const ListGoods = () => {
       ready: rdy,
     };
   }, []);
+  const [searchTerm, setSearchTerm] = useState('');
+  const [data, setData] = useState(products);
+  const handleSearchChange = (e) => {
+    setSearchTerm(e.target.value);
+  };
 
-  const goods = products.filter((product) => (product.owner !== Meteor.user().username));
+  const applySearch = () => {
+    if (!searchTerm.trim()) {
+      setData(products);
+      return;
+    }
 
-  return (ready ? (
-    <Container className="py-3">
-      <Row className="justify-content-center">
-        <Col md={7}>
-          <Col className="text-center">
-            <h2>Goods for Sale</h2>
+    const filteredData = products.filter((item) => {
+      const fieldsToSearch = ['name', 'time', 'cost', 'filter', 'appliances', 'ingredients', 'recipe'];
+
+      return fieldsToSearch.some((field) => {
+        const fieldValue = item[field];
+        if (Array.isArray(fieldValue)) {
+          return fieldValue.some(
+            (element) => typeof element === 'string' &&
+              element.toLowerCase().includes(searchTerm.toLowerCase()),
+          );
+        } if (typeof fieldValue === 'string') {
+          return fieldValue.toLowerCase().includes(searchTerm.toLowerCase());
+        }
+        return false;
+      });
+    });
+
+    setData(filteredData);
+  };
+
+  useEffect(() => {
+    if (ready) {
+      applySearch();
+    }
+  }, [ready, searchTerm, products]);
+
+  return ready ? (
+    <Container id="search-page">
+      <Form>
+        <Row>
+          <Col>
+            <Form.Group>
+              <h1 className="text-center">Goods for Sale</h1>
+              <Form.Control
+                type="text"
+                name="search"
+                placeholder="Search"
+                value={searchTerm}
+                onChange={handleSearchChange}
+              />
+            </Form.Group>
           </Col>
-        </Col>
-      </Row>
-      <Row xs={1} md={2} lg={3} className="gy-4">
-        {goods.map((product) => (<Col key={product._id} className="gy-4"><ViewableGood good={product} cartCollection={cart} /></Col>))}
+        </Row>
+      </Form>
+      <Row className="mt-4">
+        {data.map((product, index) => (
+          <Col key={index} sm={6} md={4} lg={6} className="mb-4">
+            <Good good={product} cartCollection={cart} />
+          </Col>
+        ))}
+
       </Row>
     </Container>
-  ) : <LoadingSpinner />);
+  ) : (
+    <LoadingSpinner />
+  );
 };
 
 export default ListGoods;
