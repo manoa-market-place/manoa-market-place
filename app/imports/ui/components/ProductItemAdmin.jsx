@@ -14,7 +14,7 @@ const ProductItemAdmin = ({ product, collection }) => {
   return (
     <Card border="warning" className="h-100">
       <Card.Header>
-        <Image fluid src={product.image} />
+        <Image fluid thumbnail src={product.image} />
         <Card.Title>Name: {product.name}</Card.Title>
         <Card.Subtitle>${product.price}</Card.Subtitle>
       </Card.Header>

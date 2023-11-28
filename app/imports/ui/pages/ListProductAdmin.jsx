@@ -31,7 +31,7 @@ const ListProductAdmin = () => {
         </Col>
       </Row>
       <Row xs={1} md={2} lg={3}>
-        {products.map((product) => (<Col key={product._id}><ProductItemAdmin product={product} collection={Products.collection} /></Col>))}
+        {products.map((product) => (<Col key={product._id} className="gy-4"><ProductItemAdmin product={product} collection={Products.collection} /></Col>))}
       </Row>
     </Container>
   ) : <LoadingSpinner />);

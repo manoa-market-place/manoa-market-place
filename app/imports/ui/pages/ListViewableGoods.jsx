@@ -34,7 +34,7 @@ const ListViewableGoods = () => {
         </Col>
       </Row>
       <Row xs={1} md={2} lg={3}>
-        {goods.map((product) => (<Col key={product._id}><ViewableGood good={product} /></Col>))}
+        {goods.map((product) => (<Col key={product._id} className="gy-4"><ViewableGood good={product} /></Col>))}
       </Row>
     </Container>
   ) : <LoadingSpinner />);
