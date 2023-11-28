@@ -25,14 +25,16 @@ const MyProfile = () => {
   }, []);
 
   return (ready ? (
-    <Container className="py-3">
+    <Container id="my-profile-page" className="py-3">
       <Row className="justify-content-center">
         <Col md="auto" className="text-center">
           <h2>My Profile</h2>
         </Col>
       </Row>
       <Row className="g-4 justify-content-center">
-        {profile.map((myprofile) => (<Col xs={4} key={myprofile._id}><Profile profile={myprofile} /></Col>))}
+        <Col xs={4}>
+          <Profile profile={profile[0]} />
+        </Col>
       </Row>
     </Container>
   ) : <LoadingSpinner />);

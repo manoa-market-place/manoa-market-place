@@ -4,11 +4,11 @@ import { useTracker } from 'meteor/react-meteor-data';
 import { Col, Container, Row } from 'react-bootstrap';
 import { Products } from '../../api/product/Products';
 import LoadingSpinner from '../components/LoadingSpinner';
-import ViewableGood from '../components/ViewableGood';
+import ViewableGood from '../components/Good';
 import { ProductsInCart } from '../../api/product/ProductsInCart';
 
 /* Renders a table containing all of the product documents. Use <productItemAdmin> to render each row. */
-const ListViewableGoods = () => {
+const ListGoods = () => {
   // useTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker
   const { products, cart, ready } = useTracker(() => {
     // Get access to product documents.
@@ -44,4 +44,4 @@ const ListViewableGoods = () => {
   ) : <LoadingSpinner />);
 };
 
-export default ListViewableGoods;
+export default ListGoods;
