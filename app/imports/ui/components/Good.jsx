@@ -5,8 +5,8 @@ import PropTypes from 'prop-types';
 import { Button, Card, Image } from 'react-bootstrap';
 import { ProductsInCart } from '../../api/product/ProductsInCart';
 
-/** Renders a single row in the List good table. See pages/ListViewableGoods.jsx. */
-const ViewableGood = ({ good }) => {
+/** Renders a single row in the List good table. See pages/ListGoods.jsx. */
+const Good = ({ good }) => {
   const addToCart = (productId) => {
     const checkedOutBy = Meteor.user().username;
     const checkedOutAt = new Date();
@@ -45,7 +45,7 @@ const ViewableGood = ({ good }) => {
 };
 
 // Require a document to be passed to this component.
-ViewableGood.propTypes = {
+Good.propTypes = {
   good: PropTypes.shape({
     name: PropTypes.string,
     price: PropTypes.number,
@@ -60,4 +60,4 @@ ViewableGood.propTypes = {
   }).isRequired,
 };
 
-export default ViewableGood;
+export default Good;
