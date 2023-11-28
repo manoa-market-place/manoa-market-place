@@ -19,7 +19,7 @@ const ListService = () => {
     // Get the Service documents
     const serviceItems = Services.collection.find({}).fetch();
     return {
-      service: serviceItems,
+      services: serviceItems,
       ready: rdy,
     };
   }, []);
