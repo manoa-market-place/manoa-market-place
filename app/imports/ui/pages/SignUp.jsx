@@ -23,7 +23,7 @@ const SignUp = ({ location }) => {
   });
   const bridge = new SimpleSchema2Bridge(schema);
 
-  /* Handle SignUp submission. Create user account and a profile entry, then redirect to the home page. */
+  /* Handles SignUp submission. Create user account and a profile entry, then redirect to the home page. */
   const submit = (doc) => {
     const { email, password } = doc;
     const { firstName, lastName, phoneNumber } = doc;
