@@ -16,11 +16,11 @@ const NavBar = () => {
       <Container>
         {currentUser ? (
           <Navbar.Brand as={NavLink} to="/home">
-            <Image src="images/uhm-logo.png" id="logo-nav1" key="logo-1" className="d-inline-block" width="50" height="50" alt="UHM Logo" />
+            <Image src="images/uhm-logo.png" className="d-inline-block" width="50" height="50" alt="UHM Logo" />
           </Navbar.Brand>
         ) : (
           <Navbar.Brand as={NavLink} to="/" key="landing">
-            <Image src="images/uhm-logo.png" id="logo-nav2" key="logo-2" className="d-inline-block" width="50" height="50" alt="UHM Logo" />
+            <Image src="images/uhm-logo.png" className="d-inline-block" width="50" height="50" alt="UHM Logo" />
           </Navbar.Brand>
         )}
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
