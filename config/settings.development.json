@@ -49,5 +49,13 @@
     }
   ],
   "defaultServices": [
+    {
+      "service": "study",
+      "price": 15,
+      "image": "images/sample-wallet.png",
+      "description": "test",
+      "availableTime": "2:20pm to 3:30pm",
+      "owner": "jane@foo.com"
+    }
   ]
 }
