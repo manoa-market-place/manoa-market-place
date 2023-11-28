@@ -32,12 +32,14 @@ const ViewableGood = ({ good }) => {
         <Card.Subtitle>${good.price}</Card.Subtitle>
       </Card.Header>
       <Card.Body>
+        <Card.Text>Description: {good.description}</Card.Text>
         <Card.Text>Condition: {good.condition}</Card.Text>
         <Card.Text>Color: {good.color}</Card.Text>
         <Card.Text>Quantity: {good.quantity}</Card.Text>
         <Button variant="primary" onClick={() => addToCart(good._id)}>Add to Cart</Button>
-        <footer className="blockquote-footer pt-4">{good.owner}</footer>
+        <Card.Text className="float-end">Status: {good.status}</Card.Text>
       </Card.Body>
+      <footer className="blockquote-footer pt-4">{good.owner}</footer>
     </Card>
   );
 };
@@ -51,6 +53,8 @@ ViewableGood.propTypes = {
     condition: PropTypes.string,
     color: PropTypes.string,
     quantity: PropTypes.number,
+    status: PropTypes.string,
+    description: PropTypes.string,
     owner: PropTypes.string,
     _id: PropTypes.string,
   }).isRequired,

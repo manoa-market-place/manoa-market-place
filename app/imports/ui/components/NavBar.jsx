@@ -17,11 +17,11 @@ const NavBar = () => {
       <Container>
         {currentUser ? (
           <Navbar.Brand as={NavLink} to="/home">
-            <Image src="images/uhm-logo.png" id="logo-1" className="d-inline-block" width="50" height="50" alt="UHM Logo" />
+            <Image src="images/uhm-logo.png" id="logo-nav1" key="logo-1" className="d-inline-block" width="50" height="50" alt="UHM Logo" />
           </Navbar.Brand>
         ) : (
-          <Navbar.Brand as={NavLink} to="/">
-            <Image src="images/uhm-logo.png" id="logo-2" className="d-inline-block" width="50" height="50" alt="UHM Logo" />
+          <Navbar.Brand as={NavLink} to="/" key="landing">
+            <Image src="images/uhm-logo.png" id="logo-nav2" key="logo-2" className="d-inline-block" width="50" height="50" alt="UHM Logo" />
           </Navbar.Brand>
         )}
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -43,7 +43,34 @@ const NavBar = () => {
             </Nav>
           ) : ''}
           <Nav className="justify-content-end">
-            {currentUser === '' ? (
+            {currentUser ? ([
+              <NavDropdown id="cart-dropdown" key="cart" title={<Cart />}>
+                <NavDropdown.Divider />
+                <NavDropdown.Item disabled id="total-dropdown" key="total">
+                  Total:
+                </NavDropdown.Item>
+                <NavDropdown.Divider />
+                <NavDropdown.Item id="checkout-nav" as={NavLink} to="/checkout" key="checkout">
+                  Checkout
+                </NavDropdown.Item>
+              </NavDropdown>,
+              <NavDropdown id="user-dropdown" key="user" title={currentUser}>
+                {Roles.userIsInRole(Meteor.userId(), 'admin') ? (
+                  <NavDropdown.Item id="user-dropdown-admin" as={NavLink} to="/listprofiles">
+                    List Profiles
+                  </NavDropdown.Item>
+                ) : (
+                  <NavDropdown.Item id="user-dropdown-profile" as={NavLink} to="/myprofile">
+                    My Profile
+                  </NavDropdown.Item>
+                )}
+                <NavDropdown.Item id="navbar-sign-out" as={NavLink} to="/signout">
+                  Sign out
+                  {' '}
+                  <BoxArrowRight />
+                </NavDropdown.Item>
+              </NavDropdown>,
+            ]) : (
               <NavDropdown id="login-dropdown" title="Login">
                 <NavDropdown.Item id="login-dropdown-sign-in" as={NavLink} to="/signin">
                   <PersonFill />
@@ -54,30 +81,7 @@ const NavBar = () => {
                   Sign up
                 </NavDropdown.Item>
               </NavDropdown>
-            ) : ([
-              <NavDropdown id="cart-dropdown" title={<Cart />}>
-                <NavDropdown.Divider />
-                <NavDropdown.Item disabled id="total-dropdown">Total:</NavDropdown.Item>
-                <NavDropdown.Divider />
-                <NavDropdown.Item id="checkout-nav">Checkout</NavDropdown.Item>
-              </NavDropdown>,
-              <NavDropdown id="navbar-current-user" title={currentUser}>
-                {Roles.userIsInRole(Meteor.userId(), 'admin') ? (
-                  <NavDropdown.Item id="list-profiles" as={NavLink} to="/listprofiles">
-                    List Profiles
-                  </NavDropdown.Item>
-                ) : (
-                  <NavDropdown.Item id="my-profile" as={NavLink} to="/myprofile">
-                    My Profile
-                  </NavDropdown.Item>
-                )}
-                <NavDropdown.Item id="navbar-sign-out" as={NavLink} to="/signout">
-                  Sign out
-                  {' '}
-                  <BoxArrowRight />
-                </NavDropdown.Item>
-              </NavDropdown>,
-            ])}
+            )}
           </Nav>
         </Navbar.Collapse>
       </Container>

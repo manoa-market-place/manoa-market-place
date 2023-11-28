@@ -21,6 +21,7 @@ import EditProfile from '../pages/EditProfile';
 import MyProfile from '../pages/MyProfile';
 import ListProfiles from '../pages/ListProfiles';
 import ListViewableGoods from '../pages/ListViewableGoods';
+import ListCartGoods from '../pages/ListCartGoods';
 
 /** Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
 const App = () => {
@@ -46,6 +47,7 @@ const App = () => {
           <Route path="/services" element={<ProtectedRoute><NotAuthorized /></ProtectedRoute>} />
           <Route path="/add" element={<ProtectedRoute><AddProduct /></ProtectedRoute>} />
           <Route path="/myproduct" element={<ProtectedRoute><ListProduct /></ProtectedRoute>} />
+          <Route path="/checkout" element={<ProtectedRoute><ListCartGoods /></ProtectedRoute>} />
           <Route path="/admin" element={<AdminProtectedRoute ready={ready}><ListProductAdmin /></AdminProtectedRoute>} />
           <Route path="/listprofiles" element={<AdminProtectedRoute ready={ready}><ListProfiles /></AdminProtectedRoute>} />
           <Route path="/notauthorized" element={<NotAuthorized />} />
