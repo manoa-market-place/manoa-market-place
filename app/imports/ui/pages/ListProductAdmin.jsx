@@ -30,7 +30,7 @@ const ListProductAdmin = () => {
           </Col>
         </Col>
       </Row>
-      <Row xs={1} md={2} lg={3}>
+      <Row xs={1} md={2} lg={3} className="gy-4">
         {products.map((product) => (<Col key={product._id} className="gy-4"><ProductItemAdmin product={product} collection={Products.collection} /></Col>))}
       </Row>
     </Container>

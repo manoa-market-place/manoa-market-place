@@ -13,15 +13,17 @@ const ProductItem = ({ product, collection }) => {
   return (
     <Card border="dark" className="h-100">
       <Card.Header>
-        <Image fluid src={product.image} />
+        <Image fluid thumbnail src={product.image} />
         <Card.Title>Name: {product.name}</Card.Title>
         <Card.Subtitle>${product.price}</Card.Subtitle>
       </Card.Header>
       <Card.Body>
+        <Card.Text>Description: {product.description}</Card.Text>
         <Card.Text>Condition: {product.condition}</Card.Text>
         <Card.Text>Color: {product.color}</Card.Text>
         <Card.Text>Quantity: {product.quantity}</Card.Text>
-        <Button variant="danger" onClick={() => removeItem(product._id)}><Trash /></Button>
+        <Button variant="danger" className="float-start" onClick={() => removeItem(product._id)} ><Trash /></Button>
+        <Card.Text className="float-end">Status: {product.status}</Card.Text>
       </Card.Body>
     </Card>
   );
@@ -37,6 +39,8 @@ ProductItem.propTypes = {
     color: PropTypes.string,
     quantity: PropTypes.number,
     owner: PropTypes.string,
+    status: PropTypes.string,
+    description: PropTypes.string,
     _id: PropTypes.string,
   }).isRequired,
   // eslint-disable-next-line react/forbid-prop-types

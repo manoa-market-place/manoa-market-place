@@ -1,22 +1,17 @@
 import React from 'react';
 import { Meteor } from 'meteor/meteor';
+import { Col, Container, Row, Table } from 'react-bootstrap';
 import { useTracker } from 'meteor/react-meteor-data';
-import { Col, Container, Row } from 'react-bootstrap';
-import { Products } from '../../api/product/Products';
-import LoadingSpinner from '../components/LoadingSpinner';
-import ViewableGood from '../components/ViewableGood';
 import { ProductsInCart } from '../../api/product/ProductsInCart';
+import LoadingSpinner from '../components/LoadingSpinner';
+import GoodItem from '../components/GoodItem';
+import { Products } from '../../api/product/Products';
 
-/* Renders a table containing all of the product documents. Use <productItemAdmin> to render each row. */
-const ListViewableGoods = () => {
-  // useTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker
+const ListCartGoods = () => {
   const { products, cart, ready } = useTracker(() => {
-    // Get access to product documents.
     const productsSubscription = Meteor.subscribe(Products.allPublicationName);
     const cartSubscription = Meteor.subscribe(ProductsInCart.userPublicationName);
-    // Determine if the subscription is ready
     const rdy = productsSubscription.ready() && cartSubscription.ready();
-    // Get the product documents
     const productItems = Products.collection.find({}).fetch();
     const cartItems = ProductsInCart.collection.find({}).fetch();
     return {
@@ -26,22 +21,34 @@ const ListViewableGoods = () => {
     };
   }, []);
 
-  const goods = products.filter((product) => (product.owner !== Meteor.user().username));
+  const cartGoods = cart.map((cartItem) => products.find((product) => cartItem.productId === product._id));
 
   return (ready ? (
     <Container className="py-3">
       <Row className="justify-content-center">
         <Col md={7}>
           <Col className="text-center">
-            <h2>Goods for Sale</h2>
+            <h2>Your Cart</h2>
           </Col>
+          <Table striped bordered hover>
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Status</th>
+                <th>Owner</th>
+                <th>Good</th>
+              </tr>
+            </thead>
+            <tbody>
+              {cartGoods.map((good) => <GoodItem key={good._id} good={good} />)}
+            </tbody>
+          </Table>
         </Col>
-      </Row>
-      <Row xs={1} md={2} lg={3} className="gy-4">
-        {goods.map((product) => (<Col key={product._id} className="gy-4"><ViewableGood good={product} cartCollection={cart} /></Col>))}
       </Row>
     </Container>
   ) : <LoadingSpinner />);
 };
 
-export default ListViewableGoods;
+export default ListCartGoods;
