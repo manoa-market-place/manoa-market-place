@@ -26,7 +26,7 @@ const addService = (service) => {
 if (Services.collection.find().count() === 0) {
   if (Meteor.settings.defaultServices) {
     console.log('Creating default service');
-    Meteor.settings.defaultServices.forEach(service => addProduct(service));
+    Meteor.settings.defaultServices.forEach(service => addService(service));
   }
 }
 
