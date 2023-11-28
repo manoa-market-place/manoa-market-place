@@ -33,7 +33,7 @@ const ListGoods = () => {
     setConditionFilter(event.target.value);
   };
 
-  const goods = products.filter((product) => (product.owner !== Meteor.user().username));
+  // const goods = products.filter((product) => (product.owner !== Meteor.user().username));
 
   return (ready ? (
     <Container className="py-3">
@@ -52,10 +52,8 @@ const ListGoods = () => {
           </Col>
         </Col>
       </Row>
-      <Row xs={1} md={2} lg={3}>
-        {filteredGoods.map((product) => (<Col key={product._id} className="gy-4"><ViewableGood good={product} cartCollection={cart} /></Col>))}
       <Row xs={1} md={2} lg={3} className="gy-4">
-        {goods.map((product) => (<Col key={product._id} className="gy-4"><ViewableGood good={product} cartCollection={cart} /></Col>))}
+        {filteredGoods.map((product) => (<Col key={product._id} className="gy-4"><ViewableGood good={product} cartCollection={cart} /></Col>))}
       </Row>
     </Container>
   ) : <LoadingSpinner />);
