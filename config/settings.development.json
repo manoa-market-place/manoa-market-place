@@ -85,5 +85,8 @@
       "quantity": 1,
       "owner": "jack@hawaii.edu"
     }
+  ],
+  "defaultServices": [
+
   ]
 }
