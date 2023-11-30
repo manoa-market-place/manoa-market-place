@@ -25,6 +25,7 @@ const ListGoods = () => {
       ready: rdy,
     };
   }, []);
+
   const [searchTerm, setSearchTerm] = useState('');
   const [data, setData] = useState(products);
   const handleSearchChange = (e) => {
