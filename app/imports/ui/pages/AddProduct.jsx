@@ -42,14 +42,14 @@ const AddProduct = () => {
   // Render the form. Use Uniforms: https://github.com/vazco/uniforms
   let fRef = null;
   return (
-    <Container id="add-product-page" className="py-3">
+    <Container className="py-3">
       <Row className="justify-content-center">
         <Col xs={5}>
           <Col className="text-center"><h2>Add Product</h2></Col>
-          <AutoForm id="add-product-form" ref={ref => { fRef = ref; }} schema={bridge} onSubmit={data => submit(data, fRef)}>
+          <AutoForm ref={ref => { fRef = ref; }} schema={bridge} onSubmit={data => submit(data, fRef)}>
             <Card>
               <Card.Body>
-                <TextField name="image" />
+                <TextField name="image" type="file" accept="image/png, image/jpg, image/jpeg" />
                 <TextField name="name" />
                 <TextField name="price" />
                 <TextField name="condition" />
