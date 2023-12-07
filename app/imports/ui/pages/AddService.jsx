@@ -18,6 +18,18 @@ const formSchema = new SimpleSchema({
 
 const bridge = new SimpleSchema2Bridge(formSchema);
 
+const handleFileChange = (event, formRef) => {
+  const file = event.target.files[0];
+  if (file) {
+    const reader = new FileReader();
+    reader.onload = (e) => {
+      const base64 = e.target.result;
+      formRef.change('image', base64);
+    };
+    reader.readAsDataURL(file);
+  }
+};
+
 /* Renders the AddStuff page for adding a document. */
 const AddService = () => {
 
@@ -48,7 +60,7 @@ const AddService = () => {
           <AutoForm ref={ref => { fRef = ref; }} schema={bridge} onSubmit={data => submit(data, fRef)}>
             <Card>
               <Card.Body>
-                <TextField name="image" />
+                <input name="image" type="file" onChange={(event) => handleFileChange(event, fRef)} />
                 <TextField name="service" />
                 <TextField name="price" />
                 <TextField name="availableTime" />

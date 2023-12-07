@@ -7,12 +7,12 @@ const Service = ({ service }) => (
   <Card className="h-100">
     <Card.Header>
       <Image fluid src={service.image} />
-      <Card.Title>Name: {service.service}</Card.Title>
+      <Card.Title>Service: {service.service}</Card.Title>
       <Card.Subtitle>${service.price}</Card.Subtitle>
     </Card.Header>
     <Card.Body>
-      <Card.Text>Condition: {service.description}</Card.Text>
-      <Card.Text>Color: {service.availableTime}</Card.Text>
+      <Card.Text>Description: {service.description}</Card.Text>
+      <Card.Text>Available Time: {service.availableTime}</Card.Text>
     </Card.Body>
   </Card>
 );
