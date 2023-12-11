@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Meteor } from 'meteor/meteor';
 import { Col, Container, Row, Table } from 'react-bootstrap';
 import { useTracker } from 'meteor/react-meteor-data';
@@ -20,10 +20,21 @@ const ListCartGoods = () => {
       ready: rdy,
     };
   }, []);
+  const [totalPrice, setTotalPrice] = useState(0);
+
+  useEffect(() => {
+    if (ready) {
+      // Calculate total price when cart or products change
+      const total = cart.reduce((acc, cartItem) => {
+        const product = products.find((p) => cartItem.productId === p._id);
+        return acc + (product ? product.price * cartItem.quantity : 0);
+      }, 0);
+      setTotalPrice(total);
+    }
+  }, [ready, products, cart]);
 
   const cartGoods = cart.map((cartItem) => products.find((product) => cartItem.productId === product._id));
-
-  return (ready ? (
+  return ready ? (
     <Container className="py-3">
       <Row className="justify-content-center">
         <Col md={7}>
@@ -42,13 +53,16 @@ const ListCartGoods = () => {
               </tr>
             </thead>
             <tbody>
-              {cartGoods.map((good) => <GoodItem key={good._id} good={good} />)}
+              {cartGoods.map((good) => (<GoodItem key={good._id} good={good} collection={Products.collection} />))}
             </tbody>
+            <strong>Total Price: ${totalPrice.toFixed(2)}</strong>
           </Table>
         </Col>
       </Row>
     </Container>
-  ) : <LoadingSpinner />);
+  ) : (
+    <LoadingSpinner />
+  );
 };
 
 export default ListCartGoods;

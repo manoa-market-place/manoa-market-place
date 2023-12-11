@@ -25,7 +25,6 @@ const ListGoods = () => {
       ready: rdy,
     };
   }, []);
-  
   const [searchTerm, setSearchTerm] = useState('');
   const [data, setData] = useState(products);
   const handleSearchChange = (e) => {
@@ -39,7 +38,7 @@ const ListGoods = () => {
     }
 
     const filteredData = products.filter((item) => {
-      const fieldsToSearch = ['name', 'time', 'cost', 'filter', 'appliances', 'ingredients', 'recipe'];
+      const fieldsToSearch = ['name', 'price'];
 
       return fieldsToSearch.some((field) => {
         const fieldValue = item[field];
@@ -84,7 +83,7 @@ const ListGoods = () => {
       </Form>
       <Row className="mt-4">
         {data.map((product, index) => (
-          <Col key={index} sm={6} md={4} lg={6} className="mb-4">
+          <Col key={index._id} sm={6} md={4} lg={6} className="mb-4">
             <Good good={product} cartCollection={cart} />
           </Col>
         ))}
