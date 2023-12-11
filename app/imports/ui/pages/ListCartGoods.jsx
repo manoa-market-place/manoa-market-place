@@ -1,6 +1,6 @@
 import React from 'react';
 import { Meteor } from 'meteor/meteor';
-import { Col, Container, Row, Table } from 'react-bootstrap';
+import { Button, Col, Container, Row, Table } from 'react-bootstrap';
 import { useTracker } from 'meteor/react-meteor-data';
 import { ProductsInCart } from '../../api/product/ProductsInCart';
 import LoadingSpinner from '../components/LoadingSpinner';
@@ -45,6 +45,11 @@ const ListCartGoods = () => {
               {cartGoods.map((good) => <GoodItem key={good._id} good={good} />)}
             </tbody>
           </Table>
+        </Col>
+      </Row>
+      <Row className="justify-content-center">
+        <Col className="text-center" md={4}>
+          <Button>Checkout</Button>
         </Col>
       </Row>
     </Container>

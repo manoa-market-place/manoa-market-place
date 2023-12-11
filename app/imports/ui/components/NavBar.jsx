@@ -46,16 +46,7 @@ const NavBar = () => {
           ) : ''}
           <Nav className="justify-content-end">
             {currentUser ? ([
-              <NavDropdown id="cart-dropdown" key="cart" title={<Cart />}>
-                <NavDropdown.Divider />
-                <NavDropdown.Item disabled id="total-dropdown" key="total">
-                  Total:
-                </NavDropdown.Item>
-                <NavDropdown.Divider />
-                <NavDropdown.Item id="checkout-nav" as={NavLink} to="/checkout" key="checkout">
-                  Checkout
-                </NavDropdown.Item>
-              </NavDropdown>,
+              <Nav.Link id="navbar-cart" as={NavLink} to="/checkout" key="cart"><Cart /></Nav.Link>,
               <NavDropdown id="navbar-current-user" key="user" title={currentUser}>
                 {Roles.userIsInRole(Meteor.userId(), 'admin') ? (
                   <NavDropdown.Item id="user-dropdown-admin" as={NavLink} to="/listprofiles">
