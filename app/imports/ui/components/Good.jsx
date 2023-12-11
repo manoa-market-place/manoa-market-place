@@ -35,7 +35,6 @@ const Good = ({ good }) => {
       </Card.Header>
       <Card.Body>
         <Card.Text>Condition: {good.condition}</Card.Text>
-        <Card.Text>Color: {good.color}</Card.Text>
         <Card.Text>Quantity: {good.quantity}</Card.Text>
         <Button variant="primary" onClick={() => addToCart(good._id)}>Add to Cart</Button>
         <Card.Text className="float-end">Status: {good.status}</Card.Text>
@@ -52,7 +51,6 @@ Good.propTypes = {
     price: PropTypes.number,
     image: PropTypes.string,
     condition: PropTypes.string,
-    color: PropTypes.string,
     quantity: PropTypes.number,
     status: PropTypes.string,
     owner: PropTypes.string,

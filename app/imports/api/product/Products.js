@@ -16,7 +16,6 @@ class ProductsCollection {
       price: Number,
       image: String,
       condition: String,
-      color: String,
       quantity: Number,
       owner: String,
       status: {

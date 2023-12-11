@@ -13,7 +13,6 @@ const formSchema = new SimpleSchema({
   price: Number,
   image: String,
   condition: String,
-  color: String,
   quantity: Number,
 });
 
@@ -36,10 +35,10 @@ const AddProduct = () => {
 
   // On submit, insert the data.
   const submit = (data, formRef) => {
-    const { name, price, image, condition, color, quantity } = data;
+    const { name, price, image, condition, quantity } = data;
     const owner = Meteor.user().username;
     Products.collection.insert(
-      { name, price, image, condition, color, quantity, owner },
+      { name, price, image, condition, quantity, owner },
       (error) => {
         if (error) {
           swal('Error', error.message, 'error');
@@ -65,7 +64,6 @@ const AddProduct = () => {
                 <TextField name="name" />
                 <TextField name="price" />
                 <TextField name="condition" />
-                <TextField name="color" />
                 <TextField name="quantity" />
                 <SubmitField className="text-center" value="Submit" />
                 <ErrorsField />

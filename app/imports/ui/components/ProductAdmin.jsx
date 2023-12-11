@@ -19,7 +19,6 @@ const ProductAdmin = ({ product, collection }) => {
       </Card.Header>
       <Card.Body>
         <Card.Text>Condition: {product.condition}</Card.Text>
-        <Card.Text>Color: {product.color}</Card.Text>
         <Card.Text>Quantity: {product.quantity}</Card.Text>
         <Card.Text>
           <Link to={`/edit/${product._id}`}>Edit</Link>
@@ -39,7 +38,6 @@ ProductAdmin.propTypes = {
     price: PropTypes.number,
     image: PropTypes.string,
     condition: PropTypes.string,
-    color: PropTypes.string,
     quantity: PropTypes.number,
     owner: PropTypes.string,
     status: PropTypes.string,
