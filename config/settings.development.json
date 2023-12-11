@@ -54,7 +54,6 @@
       "price": 20,
       "image": "images/samples/wallet.png",
       "condition": "used",
-      "color": "black",
       "quantity": 1,
       "owner": "john@hawaii.edu"
     },
@@ -63,7 +62,6 @@
       "price": 100,
       "image": "images/samples/bookcase.jpg",
       "condition": "barely used",
-      "color": "brown",
       "quantity": 1,
       "owner": "jane@hawaii.edu"
     },
@@ -72,7 +70,6 @@
       "price": 25,
       "image": "images/samples/hot-chocolate-maker.jpg",
       "condition": "used",
-      "color": "silver",
       "quantity": 1,
       "owner": "jaden@hawaii.edu"
     },
@@ -81,7 +78,6 @@
       "price": 400,
       "image": "/images/samples/wooden-paddle.jpg",
       "condition": "barely used",
-      "color": "brown",
       "quantity": 1,
       "owner": "jack@hawaii.edu"
     }
