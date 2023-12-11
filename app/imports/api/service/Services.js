@@ -17,6 +17,7 @@ class ServicesCollection {
       image: String,
       description: String,
       availableTime: String,
+      contactNumber: Number,
       owner: String,
     });
     // Attach the schema to the collection, so all attempts to insert a document are checked against schema.
