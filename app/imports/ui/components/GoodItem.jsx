@@ -10,7 +10,7 @@ const GoodItem = ({ good }) => (
     <td>{good.status}</td>
     <td>{good.owner}</td>
     <td>
-      <Link to={`/goods/${good._id}`}>View</Link>
+      <Link to={`/goods/${good._id}`} id="view-good">View</Link>
     </td>
   </tr>
 );

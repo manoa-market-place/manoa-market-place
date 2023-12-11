@@ -3,11 +3,10 @@ import { Meteor } from 'meteor/meteor';
 import swal from 'sweetalert';
 import PropTypes from 'prop-types';
 import { Button, Card, Image } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
 import { ProductsInCart } from '../../api/product/ProductsInCart';
 
 /** Renders a single row in the List good table. See pages/ListGoods.jsx. */
-const Good = ({ good }) => {
+const SingleGood = ({ good }) => {
   const addToCart = (productId) => {
     const checkedOutBy = Meteor.user().username;
     const checkedOutAt = new Date();
@@ -25,12 +24,10 @@ const Good = ({ good }) => {
     );
   };
   return (
-    <Card border="success" className="h-100">
+    <Card border="success" className="h-150">
       <Card.Header>
         <Image fluid src={good.image} />
-        <Card.Title className="text-center pt-3">
-          <Link to={`/goods/${good._id}`}>{good.name}</Link>
-        </Card.Title>
+        <Card.Title className="text-center pt-3">{good.name}</Card.Title>
         <Card.Subtitle>${good.price}</Card.Subtitle>
       </Card.Header>
       <Card.Body>
@@ -46,7 +43,7 @@ const Good = ({ good }) => {
 };
 
 // Require a document to be passed to this component.
-Good.propTypes = {
+SingleGood.propTypes = {
   good: PropTypes.shape({
     name: PropTypes.string,
     price: PropTypes.number,
@@ -60,4 +57,4 @@ Good.propTypes = {
   }).isRequired,
 };
 
-export default Good;
+export default SingleGood;

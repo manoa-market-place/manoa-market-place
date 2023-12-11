@@ -5,39 +5,36 @@ import { Col, Container, Row, Form } from 'react-bootstrap';
 import { Products } from '../../api/product/Products';
 import LoadingSpinner from '../components/LoadingSpinner';
 import Good from '../components/Good';
-import { ProductsInCart } from '../../api/product/ProductsInCart';
 
 /* Renders a table containing all of the product documents. Use <productItemAdmin> to render each row. */
 const ListGoods = () => {
   // useTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker
-  const { products, cart, ready } = useTracker(() => {
+  const { products, ready } = useTracker(() => {
     // Get access to product documents.
     const productsSubscription = Meteor.subscribe(Products.allPublicationName);
-    const cartSubscription = Meteor.subscribe(ProductsInCart.userPublicationName);
     // Determine if the subscription is ready
-    const rdy = productsSubscription.ready() && cartSubscription.ready();
+    const rdy = productsSubscription.ready();
     // Get the product documents
     const productItems = Products.collection.find({}).fetch();
-    const cartItems = ProductsInCart.collection.find({}).fetch();
     return {
       products: productItems,
-      cart: cartItems,
       ready: rdy,
     };
   }, []);
+  const goods = products.filter((product) => product.owner !== Meteor.user().username);
   const [searchTerm, setSearchTerm] = useState('');
-  const [data, setData] = useState(products);
+  const [data, setData] = useState(goods);
   const handleSearchChange = (e) => {
     setSearchTerm(e.target.value);
   };
 
   const applySearch = () => {
     if (!searchTerm.trim()) {
-      setData(products);
+      setData(goods);
       return;
     }
 
-    const filteredData = products.filter((item) => {
+    const filteredData = goods.filter((item) => {
       const fieldsToSearch = ['name', 'time', 'cost', 'filter', 'appliances', 'ingredients', 'recipe'];
 
       return fieldsToSearch.some((field) => {
@@ -84,15 +81,12 @@ const ListGoods = () => {
       <Row className="mt-4">
         {data.map((product, index) => (
           <Col key={index} sm={6} md={4} lg={6} className="mb-4">
-            <Good good={product} cartCollection={cart} />
+            <Good good={product} />
           </Col>
         ))}
-
       </Row>
     </Container>
-  ) : (
-    <LoadingSpinner />
-  );
+  ) : <LoadingSpinner />;
 };
 
 export default ListGoods;

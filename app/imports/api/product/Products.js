@@ -24,10 +24,6 @@ class ProductsCollection {
         allowedValues: ['available', 'inCart', 'checkedOut', 'Sold'],
         defaultValue: 'available',
       },
-      description: {
-        type: String,
-        defaultValue: 'No description provided.',
-      },
     });
     // Attach the schema to the collection, so all attempts to insert a document are checked against schema.
     this.collection.attachSchema(this.schema);

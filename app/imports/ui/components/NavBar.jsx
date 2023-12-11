@@ -15,7 +15,7 @@ const NavBar = () => {
     <Navbar bg="dark" expand="lg">
       <Container>
         {currentUser ? (
-          <Navbar.Brand as={NavLink} to="/home">
+          <Navbar.Brand as={NavLink} to="/home" key="home">
             <Image src="images/uhm-logo.png" className="d-inline-block" width="50" height="50" alt="UHM Logo" />
           </Navbar.Brand>
         ) : (
@@ -34,9 +34,9 @@ const NavBar = () => {
           {currentUser ? (
             <Nav className="me-auto justify-content-center">
               {Roles.userIsInRole(Meteor.userId(), 'admin') ? (
-                <Nav.Link id="list-product-admin-nav" as={NavLink} to="/admin" key="admin">Admin</Nav.Link>
+                <Nav.Link id="list-product-admin-nav" as={NavLink} to="/admin">Admin</Nav.Link>
               ) : ([
-                <NavDropdown title="Sell Things">
+                <NavDropdown title="Sell Things" key="things">
                   <NavDropdown.Item id="navbar-add-service" as={NavLink} to="/addservice" key="addservice">Add Service</NavDropdown.Item>
                   <NavDropdown.Item id="navbar-add-product" as={NavLink} to="/add" key="add">Add Product</NavDropdown.Item>
                 </NavDropdown>,
@@ -74,11 +74,11 @@ const NavBar = () => {
               </NavDropdown>,
             ]) : (
               <NavDropdown id="login-dropdown" title="Login">
-                <NavDropdown.Item id="login-dropdown-sign-in" as={NavLink} to="/signin">
+                <NavDropdown.Item id="login-dropdown-sign-in" as={NavLink} to="/signin" key="signin">
                   <PersonFill />
                   Sign in
                 </NavDropdown.Item>
-                <NavDropdown.Item id="login-dropdown-sign-up" as={NavLink} to="/signup">
+                <NavDropdown.Item id="login-dropdown-sign-up" as={NavLink} to="/signup" key="signup">
                   <PersonPlusFill />
                   Sign up
                 </NavDropdown.Item>

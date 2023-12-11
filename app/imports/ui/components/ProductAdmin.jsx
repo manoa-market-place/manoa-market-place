@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { Button, Card, Image } from 'react-bootstrap';
 import { Trash } from 'react-bootstrap-icons';
 /** Renders a single row in the List product (Admin) table. See pages/ListProductAdmin.jsx. */
-const ProductItemAdmin = ({ product, collection }) => {
+const ProductAdmin = ({ product, collection }) => {
   const removeItem = (docID) => {
     // eslint-disable-next-line no-console
     console.log(`The item to remove is ${docID}`);
@@ -18,7 +18,6 @@ const ProductItemAdmin = ({ product, collection }) => {
         <Card.Subtitle>${product.price}</Card.Subtitle>
       </Card.Header>
       <Card.Body>
-        <Card.Text>Description: {product.description}</Card.Text>
         <Card.Text>Condition: {product.condition}</Card.Text>
         <Card.Text>Color: {product.color}</Card.Text>
         <Card.Text>Quantity: {product.quantity}</Card.Text>
@@ -34,7 +33,7 @@ const ProductItemAdmin = ({ product, collection }) => {
 };
 
 // Require a document to be passed to this component.
-ProductItemAdmin.propTypes = {
+ProductAdmin.propTypes = {
   product: PropTypes.shape({
     name: PropTypes.string,
     price: PropTypes.number,
@@ -44,11 +43,10 @@ ProductItemAdmin.propTypes = {
     quantity: PropTypes.number,
     owner: PropTypes.string,
     status: PropTypes.string,
-    description: PropTypes.string,
     _id: PropTypes.string,
   }).isRequired,
   // eslint-disable-next-line react/forbid-prop-types
   collection: PropTypes.object.isRequired,
 };
 
-export default ProductItemAdmin;
+export default ProductAdmin;
