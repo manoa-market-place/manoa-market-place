@@ -13,6 +13,7 @@ const Service = ({ service }) => (
     <Card.Body>
       <Card.Text>Description: {service.description}</Card.Text>
       <Card.Text>Available Time: {service.availableTime}</Card.Text>
+      <Card.Text>Contact Number: {service.contactNumber}</Card.Text>
     </Card.Body>
   </Card>
 );
@@ -25,6 +26,7 @@ Service.propTypes = {
     image: PropTypes.string,
     description: PropTypes.string,
     availableTime: PropTypes.string,
+    contactNumber: PropTypes.number,
     owner: PropTypes.string,
     _id: PropTypes.string,
   }).isRequired,
