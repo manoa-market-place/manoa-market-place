@@ -17,6 +17,18 @@ body {
   --bs-dark-rgb: var(--matr-navbar-bg-rgb);
   --bs-navbar-color: var(--matr-navbar-text-color);
   --bs-navbar-hover-color: var(--matr-navbar-highlight-text);
+  background: no-repeat center center fixed url("/images/uhm-background.png");
+  background-size: cover;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.overview-section{
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding: 20px;
 }
 
 body .navbar {
@@ -64,3 +76,4 @@ footer, footer a {
   background-color: #e9ecef;
   color: #333;
 }
+

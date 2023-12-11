@@ -27,7 +27,7 @@ const ListProduct = () => {
     <Container className="py-3">
       <Row className="justify-content-center">
         <Col>
-          <Col className="text-center">
+          <Col className="text-center text-white">
             <h2>My Product</h2>
           </Col>
           <Row xs={1} md={2} lg={3} className="g-4">

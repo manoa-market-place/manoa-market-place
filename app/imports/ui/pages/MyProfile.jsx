@@ -27,7 +27,7 @@ const MyProfile = () => {
   return (ready ? (
     <Container id="my-profile-page" className="py-3">
       <Row className="justify-content-center">
-        <Col md="auto" className="text-center">
+        <Col md="auto" className="text-center text-white">
           <h2>My Profile</h2>
         </Col>
       </Row>

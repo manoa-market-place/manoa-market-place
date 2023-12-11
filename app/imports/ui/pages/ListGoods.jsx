@@ -69,7 +69,7 @@ const ListGoods = () => {
         <Row>
           <Col>
             <Form.Group>
-              <h1 className="text-center">Goods for Sale</h1>
+              <h1 className="text-center text-white">Goods for Sale</h1>
               <Form.Control
                 type="text"
                 name="search"

@@ -5,7 +5,7 @@ import { Col, Container, Row } from 'react-bootstrap';
 const NotAuthorized = () => (
   <Container className="py-3">
     <Row className="justify-content-center">
-      <Col xs={4} className="text-center">
+      <Col xs={4} className="text-center text-white">
         <h2>
           <p>Not Authorized</p>
         </h2>

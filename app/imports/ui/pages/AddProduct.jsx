@@ -57,7 +57,7 @@ const AddProduct = () => {
     <Container id="add-product-page" className="py-3">
       <Row className="justify-content-center">
         <Col xs={5}>
-          <Col className="text-center"><h2>Add Product</h2></Col>
+          <Col className="text-center text-white"><h2>Add Product</h2></Col>
           <AutoForm id="add-product-form" ref={ref => { fRef = ref; }} schema={bridge} onSubmit={data => submit(data, fRef)}>
             <Card>
               <Card.Body>

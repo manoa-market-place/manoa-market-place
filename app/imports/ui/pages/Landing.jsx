@@ -1,12 +1,12 @@
 import React from 'react';
-import { Col, Container, Row } from 'react-bootstrap';
+import { Card, Col, Container, Row } from 'react-bootstrap';
 import { CartFill, PeopleFill } from 'react-bootstrap-icons';
 
 /* A simple static component to render some text for the landing page. */
 const Landing = () => (
   <Container id="landing-page" fluid className="py-2">
     <Row className="text-center py-5">
-      <Col>
+      <Col className="text-white">
         <h1>Manoa Marketplace</h1>
         <p>Your online store for UHM student-related goods and services</p>
       </Col>
@@ -19,16 +19,18 @@ const Landing = () => (
         <PeopleFill size={75} />
       </Col>
     </Row>
-    <Row className="text-center">
-      <Col xs={6}>
-        <h3 className="pt-5">Goods</h3>
-        <p>Look for something to buy/sell.</p>
-      </Col>
-      <Col xs={6}>
-        <h3 className="pt-5">Services</h3>
-        <p>Advertise a skill for commission.</p>
-      </Col>
-    </Row>
+    <Card className="overview-section">
+      <Row className="text-center">
+        <Col xs={6}>
+          <h3 className="pt-5">Goods</h3>
+          <p>Look for something to buy/sell.</p>
+        </Col>
+        <Col xs={6}>
+          <h3 className="pt-5">Services</h3>
+          <p>Advertise a skill for commission.</p>
+        </Col>
+      </Row>
+    </Card>
     <Row className="overview text-center">
       <h2>Overview</h2>
       <p>Idle goods trading platform, let you anytime, anywhere sell fast, buy well, reliable and easy to solve idle goods trouble!</p>
