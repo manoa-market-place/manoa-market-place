@@ -14,6 +14,7 @@ const formSchema = new SimpleSchema({
   image: String,
   description: String,
   availableTime: String,
+  contactNumber: Number,
 });
 
 const bridge = new SimpleSchema2Bridge(formSchema);
@@ -35,10 +36,10 @@ const AddService = () => {
 
   // On submit, insert the data.
   const submit = (data, formRef) => {
-    const { service, price, image, description, availableTime, contact } = data;
+    const { service, price, image, description, availableTime, contactNumber } = data;
     const owner = Meteor.user().username;
     Services.collection.insert(
-      { service, price, image, description, availableTime, contact, owner },
+      { service, price, image, description, availableTime, contactNumber, owner },
       (error) => {
         if (error) {
           swal('Error', error.message, 'error');
@@ -64,6 +65,7 @@ const AddService = () => {
                 <TextField name="service" />
                 <TextField name="price" />
                 <TextField name="availableTime" />
+                <TextField name="contactNumber" />
                 <LongTextField name="description" />
                 <SubmitField className="text-center" value="Submit" />
                 <ErrorsField />
