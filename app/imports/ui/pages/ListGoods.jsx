@@ -5,6 +5,8 @@ import { Col, Container, Row, Form } from 'react-bootstrap';
 import { Products } from '../../api/product/Products';
 import LoadingSpinner from '../components/LoadingSpinner';
 import Good from '../components/Good';
+import goodItem from '../components/GoodItem';
+// import Product from '../components/Product';
 
 /* Renders a table containing all of the product documents. Use <productItemAdmin> to render each row. */
 const ListGoods = () => {
@@ -35,7 +37,7 @@ const ListGoods = () => {
     }
 
     const filteredData = goods.filter((item) => {
-      const fieldsToSearch = ['name', 'time', 'cost', 'filter', 'appliances', 'ingredients', 'recipe'];
+      const fieldsToSearch = ['name', 'price'];
 
       return fieldsToSearch.some((field) => {
         const fieldValue = item[field];

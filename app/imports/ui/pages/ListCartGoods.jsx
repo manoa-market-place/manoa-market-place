@@ -39,10 +39,11 @@ const ListCartGoods = () => {
                 <th>Status</th>
                 <th>Owner</th>
                 <th>Good</th>
+                <th>Remove</th>
               </tr>
             </thead>
             <tbody>
-              {cartGoods.map((good) => <GoodItem key={good._id} good={good} />)}
+              {cartGoods.map((good) => <GoodItem key={good._id} good={good} collection={ProductsInCart.collection} />)}
             </tbody>
           </Table>
         </Col>
