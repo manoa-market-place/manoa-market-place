@@ -54,11 +54,11 @@ const AddService = () => {
   // Render the form. Use Uniforms: https://github.com/vazco/uniforms
   let fRef = null;
   return (
-    <Container className="py-3">
+    <Container className="py-3" id="add-service-page">
       <Row className="justify-content-center">
         <Col xs={5}>
           <Col className="text-center text-white"><h2>Add Service</h2></Col>
-          <AutoForm ref={ref => { fRef = ref; }} schema={bridge} onSubmit={data => submit(data, fRef)}>
+          <AutoForm id="add-service-form" ref={ref => { fRef = ref; }} schema={bridge} onSubmit={data => submit(data, fRef)}>
             <Card>
               <Card.Body>
                 <input name="image" type="file" onChange={(event) => handleFileChange(event, fRef)} />

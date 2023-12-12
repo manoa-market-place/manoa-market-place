@@ -5,7 +5,6 @@ import { Col, Container, Row, Form } from 'react-bootstrap';
 import { Products } from '../../api/product/Products';
 import LoadingSpinner from '../components/LoadingSpinner';
 import Good from '../components/Good';
-import goodItem from '../components/GoodItem';
 // import Product from '../components/Product';
 
 /* Renders a table containing all of the product documents. Use <productItemAdmin> to render each row. */
@@ -63,7 +62,7 @@ const ListGoods = () => {
   }, [ready, searchTerm, products]);
 
   return ready ? (
-    <Container id="search-page">
+    <Container id="list-goods-page">
       <Form>
         <Row>
           <Col>

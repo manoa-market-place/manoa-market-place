@@ -25,28 +25,28 @@ const NavBar = () => {
         )}
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="me-auto justify-content-start">
-            {currentUser ? ([
-              <Nav.Link id="goods-nav" as={NavLink} to="/goods" key="goods">Goods</Nav.Link>,
-              <Nav.Link id="services-nav" as={NavLink} to="/services" key="services">Services</Nav.Link>,
-            ]) : ''}
-          </Nav>
+          {currentUser ? (
+            <Nav className="me-auto justify-content-start">
+              <Nav.Link id="navbar-list-goods" as={NavLink} to="/goods" key="goods">Goods</Nav.Link>
+              <Nav.Link id="navbar-list-services" as={NavLink} to="/services" key="services">Services</Nav.Link>
+            </Nav>
+          ) : ''}
           {currentUser ? (
             <Nav className="me-auto justify-content-center">
               {Roles.userIsInRole(Meteor.userId(), 'admin') ? (
-                <Nav.Link id="list-product-admin-nav" as={NavLink} to="/admin">Admin</Nav.Link>
+                <Nav.Link id="navbar-admin" as={NavLink} to="/admin">Admin</Nav.Link>
               ) : ([
-                <NavDropdown title="Sell Things" key="things">
+                <NavDropdown title="Sell Things" id="sell-things">
                   <NavDropdown.Item id="navbar-add-service" as={NavLink} to="/addservice" key="addservice">Add Service</NavDropdown.Item>
                   <NavDropdown.Item id="navbar-add-product" as={NavLink} to="/add" key="add">Add Product</NavDropdown.Item>
                 </NavDropdown>,
-                <Nav.Link id="navbar-my-product" as={NavLink} to="/myproduct" key="myproduct">My Product</Nav.Link>,
+                <Nav.Link id="navbar-list-product" as={NavLink} to="/listproduct" key="listproduct">My Product</Nav.Link>,
               ])}
             </Nav>
           ) : ''}
           <Nav className="justify-content-end">
             {currentUser ? ([
-              <Nav.Link id="navbar-cart" as={NavLink} to="/checkout" key="cart"><Cart /></Nav.Link>,
+              <Nav.Link id="navbar-list-cart" as={NavLink} to="/checkout" key="cart"><Cart /></Nav.Link>,
               <NavDropdown id="navbar-current-user" key="user" title={currentUser}>
                 {Roles.userIsInRole(Meteor.userId(), 'admin') ? (
                   <NavDropdown.Item id="user-dropdown-admin" as={NavLink} to="/listprofiles">

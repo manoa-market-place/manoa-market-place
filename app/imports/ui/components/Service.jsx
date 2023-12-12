@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Button, Card, Image } from 'react-bootstrap';
-import { Trash } from 'react-bootstrap-icons';
+import { Card, Image } from 'react-bootstrap';
 
 /** Renders a single row in the List Service table. See pages/ListService.jsx. */
 const Service = ({ service }) => (
