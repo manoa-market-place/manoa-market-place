@@ -2,7 +2,7 @@
   "defaultAccounts": [
     {
       "email": "admin@hawaii.edu",
-      "password": "changeme",
+      "password": "admin",
       "role": "admin"
     },
     {
@@ -20,69 +20,494 @@
     {
       "email": "jack@hawaii.edu",
       "password": "changeme"
+    },
+    {
+      "email": "mason@hawaii.edu",
+      "password": "changeme"
+    },
+    {
+      "email": "bella@hawaii.edu",
+      "password": "changeme"
+    },
+    {
+      "email": "andrew@hawaii.edu",
+      "password": "changeme"
+    },
+    {
+      "email": "abby@hawaii.edu",
+      "password": "changeme"
+    },
+    {
+      "email": "charlie@hawaii.edu",
+      "password": "changeme"
+    },
+    {
+      "email": "dean@hawaii.edu",
+      "password": "changeme"
     }
   ],
   "defaultUserProfiles": [
     {
       "firstName": "John",
       "lastName": "Wick",
-      "phoneNumber": "1234567890",
+      "phoneNumber": 1231231234,
       "owner": "john@hawaii.edu"
     },
     {
       "firstName": "Jane",
       "lastName": "Dole",
-      "phoneNumber": "1231231230",
+      "phoneNumber": 2342341234,
       "owner": "jane@hawaii.edu"
     },
     {
       "firstName": "Jaden",
-      "lastName": "Bryson",
-      "phoneNumber": "1231231230",
-      "owner": "johnson@hawaii.edu"
+      "lastName": "Jasen",
+      "phoneNumber": 3453451234,
+      "owner": "jaden@hawaii.edu"
     },
     {
       "firstName": "Jack",
-      "lastName": "Hall",
-      "phoneNumber": "1231231230",
+      "lastName": "Schwarma",
+      "phoneNumber": 4564561234,
       "owner": "jack@hawaii.edu"
+    },
+    {
+      "firstName": "Mason",
+      "lastName": "Lee",
+      "phoneNumber": 5675671234,
+      "owner": "mason@hawaii.edu"
+    },
+    {
+      "firstName": "Bella",
+      "lastName": "Maeda",
+      "phoneNumber": 6786781234,
+      "owner": "bella@hawaii.edu"
+    },
+    {
+      "firstName": "Andrew",
+      "lastName": "Li",
+      "phoneNumber": 7897891234,
+      "owner": "andrew@hawaii.edu"
+    },
+    {
+      "firstName": "Abby",
+      "lastName": "Jahal",
+      "phoneNumber": 8908901234,
+      "owner": "abby@hawaii.edu"
+    },
+    {
+      "firstName": "Charlie",
+      "lastName": "Lason",
+      "phoneNumber": 1230982344,
+      "owner": "charlie@hawaii.edu"
+    },
+    {
+      "firstName": "Dean",
+      "lastName": "Keeler",
+      "phoneNumber": 1908271827,
+      "owner": "dean@hawaii.edu"
     }
   ],
   "defaultProducts": [
     {
       "name": "Wallet",
       "price": 20,
-      "image": "images/samples/wallet.png",
+      "image": "https://dunwallets.com/wp-content/uploads/2016/10/Black_Silver_1.jpeg",
+      "condition": "new",
+      "quantity": 1,
+      "owner": "john@hawaii.edu"
+    },
+    {
+      "name": "Texas Instrument TI-30X Calculator",
+      "price": 30,
+      "image": "https://webobjects2.cdw.com/is/image/CDW/418190?$product-main$",
+      "condition": "new",
+      "quantity": 1,
+      "owner": "jane@hawaii.edu"
+    },
+    {
+      "name": "Graphing Notebook",
+      "price": 4,
+      "image": "https://cdn11.bigcommerce.com/s-98fz2hbpcm/images/stencil/1280x1280/products/1628/2468/22888__25286.1688372124.jpg?c=1",
+      "condition": "new",
+      "quantity": 1,
+      "owner": "jaden@hawaii.edu"
+    },
+    {
+      "name": "Sharp Mechanical Drafting Pencil",
+      "price": 6,
+      "image": "https://www.pentel.com/cdn/shop/products/ospxeqbnjxymfe0gs8sp_1800x1800.jpg?v=1662737930",
+      "condition": "new",
+      "quantity": 1,
+      "owner": "jack@hawaii.edu"
+    },
+    {
+      "name": "Brite Liner Grip Pastel Highlighter Set",
+      "price": 10,
+      "image": "https://i.ebayimg.com/images/g/EjUAAOSwsNFkmuxl/s-l1200.webp",
+      "condition": "new",
+      "quantity": 1,
+      "owner": "mason@hawaii.edu"
+    },
+    {
+      "name": "Composition Book",
+      "price": 2,
+      "image": "https://cdn11.bigcommerce.com/s-98fz2hbpcm/images/stencil/1280x1280/products/649/954/teaserbox_21542180__08624.1626343357.png?c=1",
+      "condition": "new",
+      "quantity": 1,
+      "owner": "bella@hawaii.edu"
+    },
+    {
+      "name": "Three-Ring Binder POly Index Dividers with Pocket",
+      "price": 4,
+      "image": "https://content.oppictures.com/Master_Images/Master_Variants/Variant_1500/766229.jpg",
+      "condition": "new",
+      "quantity": 1,
+      "owner": "andrew@hawaii.edu"
+    },
+    {
+      "name": "20 oz Kids Wide Mouth Water Bottle",
+      "price": 37,
+      "image": "https://www.hydroflask.com/media/catalog/product/w/2/w20bswbb474-lupine-colorup-straighton_1.jpg",
+      "condition": "new",
+      "quantity": 1,
+      "owner": "abby@hawaii.edu"
+    },
+    {
+      "name": "SeeDete 32GB USB Flash Drives",
+      "price": 10,
+      "image": "https://m.media-amazon.com/images/W/MEDIAX_792452-T2/images/I/61Rje75BfpL.jpg",
+      "condition": "new",
+      "quantity": 3,
+      "owner": "charlie@hawaii.edu"
+    },
+    {
+      "name": "Female Lab Coat",
+      "price": 24,
+      "image": "https://schools.theultimateimage.com/mm5/graphics/00000003/L18FWH_960x960.jpg",
+      "condition": "new",
+      "quantity": 1,
+      "owner": "dean@hawaii.edu"
+    },
+    {
+      "name": "My Neighbor Totoro Sketchbook",
+      "price": 19,
+      "image": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcQfd7f1YQvXoY1EJyz4OJXtTja8fNoyrPaO6IrZ5cOen1mzfhuuaZ3VO1MupTr2xUMpzql0HjfsfPwXILcnTgsYsj6rgquPdmJs74U-8qY&usqp=CAE",
+      "condition": "new",
+      "quantity": 1,
+      "owner": "john@hawaii.edu"
+    },
+    {
+      "name": "3\" x 5\" Unruled Index Cards White",
+      "price": 1,
+      "image": "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcTLQ6ALMgqoy4teD8VzGSL7H0h_JPLjGIsqetbQNXrYkHEBXVioAqx-Am-TC3jJ50MqBZPA_Fwmvx-MM95Q2GHSw8-4RGZCzkRlaYsZDgyXfYi5EfqTOPXbsw&usqp=CAE",
+      "condition": "new",
+      "quantity": 100,
+      "owner": "jane@hawaii.edu"
+    },
+    {
+      "name": "Shuttle Art Drawin Kit",
+      "price": 36,
+      "image": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcRraOHtwkPK2tLOxe26Tx69Mv7LB7AlLPTL9rlGlu1h1DcZCf9BonhZkGDiqNQtT7FZowVDhqSbXSVEn1sms4WuQ0AgyCxL1ORE0uQt9hgQ4XyDAO7ejdbjfw&usqp=CAE",
+      "condition": "new",
+      "quantity": 116,
+      "owner": "jaden@hawaii.edu"
+    },
+    {
+      "name": "Mr. Pen Geometry Set",
+      "price": 10,
+      "image": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcQz-GxghXWCsr0myfpAFwK5IQQBqVqg4fct-RIA_QXrGWfYQmgGX6O7CSgPt9q0Koj34UigXg3_RNsU8s8MOePHV_v6TYZpsVOXFq_xP1Mcigx7SIE4JMh4&usqp=CAE",
+      "condition": "new",
+      "quantity": 13,
+      "owner": "jack@hawaii.edu"
+    },
+    {
+      "name": "Up & Up Wood Ruler",
+      "price": 1,
+      "image": "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcS2GdIVkhMY-SbXqa0jtf2y8d9sCYL5Vf8fwQ_KwS5N6YVpsciR7C1GWBhjqKk0HdxZ4Lq_LX1ZUetbBTt_CW7-Y_MLy4zlTv0Oag3_91JG7arMRK3aPIBA&usqp=CAE",
+      "condition": "new",
+      "quantity": 1,
+      "owner": "mason@hawaii.edu"
+    },
+    {
+      "name": "Office Depot Brand Hanging FOlders",
+      "price": 20,
+      "image": "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcSTA6zjwSFDPyn6PHV3mBtyNrn2HgU2QznKwwGcgYV2KQ8i7VYK-TsAh6jv7Fm39A7Nt4wdw7Ruua1JZ6N3XmFCHJpGkaxfhfS6DSuGO-vBY-Qh7pAiNMnP&usqp=CAE",
+      "condition": "new",
+      "quantity": 1,
+      "owner": "bella@hawaii.edu"
+    },
+    {
+      "name": "General Tools Steel Square Head Protractor",
+      "price": 5,
+      "image": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcSbI5jwlHXrwXWzEppxMpi-yyQHIBmO9z9y1V-pdzVe6P8so9wmm0iTGMmXHIvJFKMzhJRmB8b6rw5ilkaro2qYNAfswZXXqvhAL2XLdq8WY6UUGO1p-7_kNw&usqp=CAE",
+      "condition": "new",
+      "quantity": 1,
+      "owner": "andrew@hawaii.edu"
+    },
+    {
+      "name": "Amazon Basic Dry Erase White Board Markers",
+      "price": 9,
+      "image": "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcScgxM-Z9KyLm1QzhJZm9aWRy4xB_LtA3B4tS7ZxXxblSMxfleg3kAQxg7An7bevH7pl_bIg3pvzeHqfLLpVfk67p06IipZMcDrQwmywWYH7E5vzgU-KWFs&usqp=CAE",
+      "condition": "new",
+      "quantity": 12,
+      "owner": "abby@hawaii.edu"
+    },
+    {
+      "name": "Norcom Notebook Paper",
+      "price": 5,
+      "image": "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcR2G795pYXAzMScyy8CLHB6_pXyjCEAuOHc1AiG3qsXWRdHvt0Od1RR2phnyh0IeFVJcg4VgCPUMaR4sP2lDNpsfPFEQFg53bvhvjh2o7ZkynjHAnudZlm2&usqp=CAE",
+      "condition": "new",
+      "quantity": 150,
+      "owner": "charlie@hawaii.edu"
+    },
+    {
+      "name": "Herschel Supply Co. Classic XL Backpack",
+      "price": 45,
+      "image": "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcSWXjha8MA12YHJLxjXuI4w6vpDlEiiuEbxhMPcxJfxVjPCmLng2O7LubT9zIiTZfMhHJr01OGGeS3__V7MoKVGsaOTjKEMyWesCuLWNGc2kuF43CwsAKuQ&usqp=CAE",
+      "condition": "new",
+      "quantity": 1,
+      "owner": "dean@hawaii.edu"
+    },
+    {
+      "name": "Puffy Laptop Sleeve 13\"/14\"",
+      "price": 32,
+      "image": "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcSxGX_7VcVEAVtigeUVpBm8L5j3tpUTKkQeZfChXAHcS-mHnHnUUrAgf5gI2lZiwKeX7jlFYq-J6k5sEBvFIJs4eo8Bc6AeNOq8FACR_Wj8s-nd48_7eJhF6pw&usqp=CAE",
+      "condition": "new",
+      "quantity": 1,
+      "owner": "john@hawaii.edu"
+    },
+    {
+      "name": "Regolden-Book Daily Planner",
+      "price": 15,
+      "image": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcRJVdAINH2wsUdFgTRyM-j8lwqUc5g4NnDk-sR09u3WKQe1NLruOAFFeJ3LIoUfYolsfseq4M31ruxUx58cBrK2FxCTmb7vSpToB0n2UF1egNDvDmybd4Einw&usqp=CAE",
+      "condition": "new",
+      "quantity": 1,
+      "owner": "jane@hawaii.edu"
+    },
+    {
+      "name": "Sticky Notes Cube Multicolor",
+      "price": 3,
+      "image": "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcT_10ndxFjgbecvEOHZ6fTCnJtpCWiwfApOH3Y0sNgdFf4PqurvgbeA2S0uzpI736GbM33-wepUKNclmWj8y99j5slWWeDMcKDXlOHHqo5M7g398mA3g7BV4MU&usqp=CAE",
+      "condition": "new",
+      "quantity": 4,
+      "owner": "jaden@hawaii.edu"
+    },
+    {
+      "name": "Book Sox Jumbo Book Cover",
+      "price": 2,
+      "image": "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcRRpsWnrExmX6aw0ETOrJ1YmXJrZ23VMitWt0rPI6WUO6NpqqxFVeoq9AOFGg0tlS53scRYeLWAiBWjxqSyESTOrQ_nrIleoFdlDFRTE1X5t-sJ3nG6XS6L-A&usqp=CAE",
+      "condition": "new",
+      "quantity": 1,
+      "owner": "jack@hawaii.edu"
+    },
+    {
+      "name": "MCR Chemical Safety Goggles",
+      "price": 3,
+      "image": "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcR7IH7cZ-Tc4T2sZiGLSB60OIKIsjE3STTCpPfPVNV87H9cNIK_zvx4kFC5N45h3qJ7H0DVMWWyspOZExcmtkHCLyZHLtwaRl1UEzTOarKoyY-oDPHzQ0M9&usqp=CAE",
+      "condition": "new",
+      "quantity": 1,
+      "owner": "mason@hawaii.edu"
+    },
+    {
+      "name": "Grabie Watercolor Paint Set",
+      "price": 40,
+      "image": "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcSWytp6yUTLGMiIV9E5rivvSdXOEiWEUDgC10ttgHsRdCmjlFvy9RN4e-ySa8sCVS6mT3wMcnwJKlkZqMzh0AsVkITOjXS7uUVtCQjnzmIv7ms3JJFCbmWsrQ&usqp=CAE",
+      "condition": "used",
+      "quantity": 100,
+      "owner": "bella@hawaii.edu"
+    },
+    {
+      "name": "CICMELON Pencil Case",
+      "price": 16,
+      "image": "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcSujT0MYUlBEHg6vRWLWU9aJo3HYYB3-feYwEusixEPvnLrpHInWVqGWs2B5mgA1H0gsTiUyBt_0-DXvle1WZ25T2x2OGkpdK0gtDHUfFmmdEx67A2bj5Jrig&usqp=CAE",
+      "condition": "used",
+      "quantity": 1,
+      "owner": "andrew@hawaii.edu"
+    },
+    {
+      "name": "Derwent USB Rechargeable Eraser",
+      "price": 23,
+      "image": "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcSVjRVvyW0ijRIgSRiIKOh3x3vmfyimgDPJbEZ0XqrqMy8BpEDDImOlt5eq_BSh6eI269dSJXO-nJzZRDcWGFwmikenxEU852NDy3dk5d83RUDS_nDf9Pbelw&usqp=CAE",
+      "condition": "used",
+      "quantity": 1,
+      "owner": "abby@hawaii.edu"
+    },
+    {
+      "name": "Coghlan's 8162 Map Compass",
+      "price": 7,
+      "image": "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcTzL75qefoM72hJc0T4KPFMAiQdt0XY5hWsodzvi6mvZ26HT80XYBi9Wnu3q4fitsB5gZ3WTRYKNqAVlFQL5AEf2suMUmz8nRWZc5JE0UCc_mU13h6Zcy9-&usqp=CAE",
+      "condition": "used",
+      "quantity": 1,
+      "owner": "charlie@hawaii.edu"
+    },
+    {
+      "name": "Construction Paper",
+      "price": 30,
+      "image": "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcTC6gepiH6P0fUa4wleNULEY-YoGV3LcPW5R36IHXvQWFMPycXZv--_VSgN-PoOkR_AiEFpR5PYaUaAfWGlrSci_YA8qVZAqjyW-yJYywmbGW5yeeGZ6R2gIA&usqp=CAE",
+      "condition": "used",
+      "quantity": 50,
+      "owner": "dean@hawaii.edu"
+    },
+    {
+      "name": "Art Alternatives Gel Pen White",
+      "price": 1,
+      "image": "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcSHGAi911bP2rPiFx46DFzIBlG-eyj2nqc721aZzzkR_yhxeN5s8ek5-_ihBBLc1ZhfsGD-f_LOvUSytwzeNc8DrZ2i-Fgi2e3lXd39a5_2ssrL7Imr-bcF&usqp=CAE",
       "condition": "used",
       "quantity": 1,
       "owner": "john@hawaii.edu"
     },
     {
-      "name": "Wood Bookcase",
-      "price": 100,
-      "image": "images/samples/bookcase.jpg",
-      "condition": "barely used",
+      "name": "Oxford English Dictionary",
+      "price": 12,
+      "image": "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcQ9ZQG8hrHz9ZRtiNCymZucLdb0oD6Gd0T94sTZwsqPJpKjqzMlPJL4SheQq0sXVfn8FnIzECr8DynCDypZYJ-IAwAgSQ1Aizp7mUNp0KOQ1roC4zQ2WH32&usqp=CAE",
+      "condition": "used",
       "quantity": 1,
       "owner": "jane@hawaii.edu"
     },
     {
-      "name": "Hot Chocolate Maker",
-      "price": 25,
-      "image": "images/samples/hot-chocolate-maker.jpg",
+      "name": "Dustless Wool Felt Chalkboard Eraser",
+      "price": 10,
+      "image": "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcTjbMLzy5sUojyODt7d0epn16jadbKTqHngdbzAGy7hugFxyx6twUHbwHNKfiNyVITD8frARndLjCbwGRpkxkynZC6n9Sj_JWiVegvsVfOtGYJSpfcJlCaC&usqp=CAE",
+      "condition": "used",
+      "quantity": 5,
+      "owner": "jaden@hawaii.edu"
+    },
+    {
+      "name": "Micador Early Start Safety Scissors",
+      "price": 6,
+      "image": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcSY1fyK2ur74CL6qi3OAnb5T_cnreubly7EpIJ_AEgVr-Aq1XQ9v279wj8UvRI3-q6nIKz1eFHZhgWn0P1fCbZ-bAB-GwzkdihcEb0EUgsGbXooPDdANg2rUg&usqp=CAE",
+      "condition": "used",
+      "quantity": 1,
+      "owner": "jack@hawaii.edu"
+    },
+    {
+      "name": "Retro 15-Can Mini Fridge Stainless Steel",
+      "price": 50,
+      "image": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcQhGOeKZWM_WiP7ccMRjPqcoFKkTOIOgz1zq7rpiZ5hzQ0UnFEvLOzFOV8obQIZa2RGQzpLkO860LIYEQckwXqxumnOgzemvPe4IYz308Yk84FwLqM8EcF69g&usqp=CAE",
+      "condition": "used",
+      "quantity": 1,
+      "owner": "mason@hawaii.edu"
+    },
+    {
+      "name": "HGWALP Universal Case for 7-8 inc Tablet",
+      "price": 12,
+      "image": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcT7wLKosKX0OZgHJfAtJ0dFYNUyzT5gZDwlSjutWI0akC-2QG1DJRoKhJLjS7csiZKiGOdFw8O57B08FMgUVpW_VuJZy2IuCShpyRJeocSAqpVx6fGwZaG9ew&usqp=CAE",
+      "condition": "used",
+      "quantity": 1,
+      "owner": "bella@hawaii.edu"
+    },
+    {
+      "name": "Taylor Digital Multi-Purpose Timer",
+      "price": 8,
+      "image": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcTZcsyTDpKUOOt40m0bVA5QRh5yyF6kORzvHN3-3L3jWL82dGVFmoR3fqWOtKg6NGWtvH-UhoBx9V-72-0loU4fl1kVuFRR-LsvdDeUV-Kyw6-Nbq-vjJifEY0&usqp=CAE",
+      "condition": "used",
+      "quantity": 1,
+      "owner": "andrew@hawaii.edu"
+    },
+    {
+      "name": "Sony WH-1000XM4 Blck Wireless Headphones",
+      "price": 228,
+      "image": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcR_0Jp7zEhtnODdgsWKA12ssyp3EhCr2PTQbK2pxK7EIvIdAsJmySAqUIQfrvg23HND4XgzFgmQfgy-OXt-7gi5ynUsdIK-3N5FTAW__Bs&usqp=CAE",
+      "condition": "used",
+      "quantity": 1,
+      "owner": "abby@hawaii.edu"
+    },
+    {
+      "name": "Frank Lloyd Wright Wood Puzzle Set",
+      "price": 23,
+      "image": "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcRuXQC6n_VCfXDZYHMILSXYcjNRAlWSR3_OcVK1Rmw2eqXAlOzjAHOF5FO7C6zLItfUL4b4p6NDiUZH92cDqF-Jhe0dMRIH_TmQ8TzexuTB-sBu-qKwpbb8Xw&usqp=CAE",
+      "condition": "used",
+      "quantity": 1,
+      "owner": "charlie@hawaii.edu"
+    },
+    {
+      "name": "Eyeskey Multifuncitonal Military Army Compass",
+      "price": 19,
+      "image": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcQZ7h0vpF3o_nq26QUPZub0xS3Mb_v-MpeJu3zmGpVADfl4FfRJdPloWTXbC3tc_f8C4j8YgbTUSAR_tFiKNNgO1mBAytwrqJ2klqVQYdU_GfCjf5UB2YADTw&usqp=CAE",
+      "condition": "used",
+      "quantity": 1,
+      "owner": "dean@hawaii.edu"
+    },
+    {
+      "name": "Herschel Supply Co. Kids heritage Pencil Case",
+      "price": 19,
+      "image": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcRWrDvuJKuDCoqs61iPJYHWWDhGB6PmpJdk27AwBaPuoRE9BEkg2LqE3CJVM9BYYltpl1KV15fsNQkJMVsrim1unIjMppLFX_aQAeIZV5bhvreVHz_Gdv7SGUSC&usqp=CAE",
+      "condition": "used",
+      "quantity": 1,
+      "owner": "john@hawaii.edu"
+    },
+    {
+      "name": "Austen Custome Size Bible/Book Cover",
+      "price": 10,
+      "image": "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcSBfe-mR8qG48wb0mQTUYSWnu4iJC1ucnKZ3q2OPAsQnJgJmW09d5l68sJ3ol6fZqq5ZfbyqvgJhEamuM4Vi2O6nxxx7vcBR_G6_OUhHLOlsT2nCxv8QcVLCQ&usqp=CAE",
+      "condition": "used",
+      "quantity": 1,
+      "owner": "jane@hawaii.edu"
+    },
+    {
+      "name": "Foiled 2024 Planner",
+      "price": 40,
+      "image": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcQ28yoySPmOlaTjPm3kap0k4IWbPlkVWOwECxdavPkibiCbJuKYsMpqt-IFNyS38M6Ny9VsJeOLIYnyg-vDP8AHlUZuU1sWY9P4LQEPvjIjyOCRZgQdNHUt&usqp=CAE",
       "condition": "used",
       "quantity": 1,
       "owner": "jaden@hawaii.edu"
     },
     {
-      "name": "Wooden Paddle",
-      "price": 400,
-      "image": "/images/samples/wooden-paddle.jpg",
-      "condition": "barely used",
+      "name": "ANKUER Laptop Backpack",
+      "price": 30,
+      "image": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcRYf3xd5gdqSgj10fedWddNJLgtvWD9ARAhu83b50s5B-Mvh5-T3piKF6YM6ibDC3hnuC-k8YpLfOjklbtJv9Z8n_0Mq7Rqfo3CTKSvZNM&usqp=CAE",
+      "condition": "used",
       "quantity": 1,
       "owner": "jack@hawaii.edu"
+    },
+    {
+      "name": "Seagate STGX4000400 Portable 4TB External Drive",
+      "price": 100,
+      "image": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcSsYsDYboY6m8XMjb9Yu2ypVOfzm6jpp61gmxNZinzdVQGCqb1p-Vdig__d19PxrppmyfHCbpiM6q29Be1rW3wccSLZX37f1f-TfF2ecRDP7l_NgeVcROoAbw&usqp=CAE",
+      "condition": "used",
+      "quantity": 1,
+      "owner": "mason@hawaii.edu"
+    },
+    {
+      "name": "AOAILION Standard Calculator",
+      "price": 9,
+      "image": "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcRQ0YeRm2E2h_vCTQnDv7OJANqHLxNWjqI_xT02WlPuzMheK33EmU4zAiQHTMXgXUDozKOTEJl1P0LGHqU1WIApWpnz0JOyWATahR6VjcZqc_oKuQ4wRsOn_w&usqp=CAE",
+      "condition": "used",
+      "quantity": 1,
+      "owner": "bella@hawaii.edu"
+    },
+    {
+      "name": "Cool Fidget Gel Pens",
+      "price": 27,
+      "image": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcTOEFp05lsJDqxrXYhwsDdsANhKfnUJ5j8Ew6a7D5DV5k6w4fqMkRY1f6CuwimppPrBwRQO2R8mAYbzCBCt1MNo8Tq27yYlvq9UoHNAXS6c03Xyf7UuXn7Z&usqp=CAE",
+      "condition": "used",
+      "quantity": 10,
+      "owner": "andrew@hawaii.edu"
+    },
+    {
+      "name": "MotBach 10 pack White Blank Flash Cards",
+      "price": 10,
+      "image": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcQ6mK6-S5u9uPZL6jkG28Wi01p-0hPNFGFd8uf6ehoDenuT_WtdRDn8V8t_sc1IY7CQmw50PmTfWh2kys2lU_5ZypUPTwx3gpI-x-WXOUDSeROQfzts8LH9&usqp=CAE",
+      "condition": "used",
+      "quantity": 10,
+      "owner": "abby@hawaii.edu"
+    },
+    {
+      "name": "Merriam Webster Collegiate Dictionary",
+      "price": 22,
+      "image": "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcQhUI9VcErXT5g9ctwdFOloiKsSBwF5kKv0tj4JexFDWBattw8tF9jgEKnRfLueqiXEMUeIZLCkHZddSq9pxHzZFblZVFq6xyXOLRbtRZ-GPiTZ5qo8zVmGLw&usqp=CAE",
+      "condition": "used",
+      "quantity": 1,
+      "owner": "charlie@hawaii.edu"
+    },
+    {
+      "name": "Dabo&Shobo 60 Colors Alcohol Markers",
+      "price": 56,
+      "image": "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcQze6LnhzJjvNhcjGSOIICFQVeuqEcjD9Q-58dHqDFLTh1uJVJHxjEAQd82dMHsOMMq5uF6CxwV2UWosWu7uQn-LcXMlK8VB3Ph2uWWTgnKn6kV_XnF9nH5og&usqp=CAE",
+      "condition": "used",
+      "quantity": 60,
+      "owner": "dean@hawaii.edu"
     }
-  ],
-  "defaultServices": [
-
   ]
 }
