@@ -1,5 +1,6 @@
 import React from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 /** The Footer appears at the bottom of every page. Rendered by the App Layout component. */
 const Footer = () => (
@@ -14,11 +15,12 @@ const Footer = () => (
           <br />
           Honolulu, HI 96822
         </Col>
-        <Col lg={6} className="text-end">
-          <h5>Contact Us</h5>
-          andrewl2@hawaii.edu
-          <br />
-          (206) 403-6299
+        <Col lg={6} className="text-end align-self-cebter">
+          <p>
+            View the site&apos;s development at:
+            {' '}
+            <Link to="https://manoa-market-place.github.io/">GitHub</Link>
+          </p>
         </Col>
       </Row>
     </Container>
