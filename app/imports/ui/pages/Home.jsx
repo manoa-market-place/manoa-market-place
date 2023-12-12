@@ -12,15 +12,15 @@ const Home = () => (
         <p>Your online store for UHM student-related goods and services</p>
       </Col>
     </Row>
-    <Row className="text-center py-2 background-color white">
-      <Col xs={6}>
-        <CartFill size={75} />
-      </Col>
-      <Col xs={6}>
-        <PeopleFill size={75} />
-      </Col>
-    </Row>
     <Card>
+      <Row className="text-center py-2 background-color white">
+        <Col xs={6}>
+          <CartFill size={75} />
+        </Col>
+        <Col xs={6}>
+          <PeopleFill size={75} />
+        </Col>
+      </Row>
       <Row className="text-center">
         <Col xs={6}>
           <h3 className="pt-5"><Link to="/goods">Goods</Link></h3>

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Card, Col, Container, Row } from 'react-bootstrap';
 import { CartFill, PeopleFill } from 'react-bootstrap-icons';
+import { Link } from 'react-router-dom';
 
 /* A simple static component to render some text for the landing page. */
 const Landing = () => (
@@ -11,15 +12,15 @@ const Landing = () => (
         <p>Your online store for UHM student-related goods and services</p>
       </Col>
     </Row>
-    <Row className="text-center py-2">
-      <Col xs={6}>
-        <CartFill size={75} />
-      </Col>
-      <Col xs={6}>
-        <PeopleFill size={75} />
-      </Col>
-    </Row>
     <Card className="overview-section">
+      <Row className="text-center py-2">
+        <Col xs={6}>
+          <CartFill size={75} />
+        </Col>
+        <Col xs={6}>
+          <PeopleFill size={75} />
+        </Col>
+      </Row>
       <Row className="text-center">
         <Col xs={6}>
           <h3 className="pt-5">Goods</h3>
@@ -32,45 +33,25 @@ const Landing = () => (
       </Row>
     </Card>
     <Row className="overview text-center">
-      <h2>Overview</h2>
-      <p>Idle goods trading platform, let you anytime, anywhere sell fast, buy well, reliable and easy to solve idle goods trouble!</p>
-    </Row>
-    <Row className="offer text-center">
-      <h2>What We Offer</h2>
-      <Row>
-        <Col>
-          <p>Transaction Assistance</p>
-        </Col>
-        <Col>
-          <p>Account Management</p>
-        </Col>
-        <Col>
-          <p>Technical Support</p>
-        </Col>
-        <Col>
-          <p>Dispute Resolution</p>
-        </Col>
-        <Col>
-          <p>Educational Resources</p>
-        </Col>
-      </Row>
-    </Row>
-
-    <Row className="intro text-center">
-      <h2>Cash</h2>
-      <p>take pictures and sell, idle items around you become valuable in 10 seconds</p>
-      <h2>Save Money</h2>
-      <p>new idle value second-hand waiting for you to search</p>
-      <h2>Environmental protection</h2>
-      <p>eliminate waste, idle can also glow new value</p>
-    </Row>
-
-    <Row className="vendor-information text-center">
-      <h2>Become a Vendor</h2>
-      <p>Interested in selling your goods? Join our vibrant community of vendors! Contact us for booth availability and pricing.</p>
-      <p>feel free to contact Us if you have any questions</p>
-      <p>andrewl2@hawaii.edu</p>
-      <p>Phone: (206) 403-6299</p>
+      <Col>
+        <h3>Welcome UHM Student</h3>
+        <p>
+          UHM students have a “rapid” churn rate in goods and services.
+          Students leave the dorm for an on-campus apartment and need to get rid of dorm-specific stuff and acquire apartment-specific stuff.
+          Students graduate and need to get rid of stuff because they’re moving off-island.
+          There is therefore a tremendous amount of “campus-specific” goods and services that could be more effectively recycled and reused if there was an effective marketplace for these specific kinds of items.
+        </p>
+        <p>
+          The Manoa Marketplace is an application for UHM students to facilitate buying and selling of student-related goods and services.
+        </p>
+        <p>
+          References the
+          {' '}
+          <Link to="https://manoa-market-place.github.io/#user-guide">User Guide</Link>
+          {' '}
+          to get started, and sign up now!
+        </p>
+      </Col>
     </Row>
   </Container>
 );
