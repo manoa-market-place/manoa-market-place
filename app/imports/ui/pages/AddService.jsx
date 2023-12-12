@@ -14,7 +14,6 @@ const formSchema = new SimpleSchema({
   image: String,
   description: String,
   availableTime: String,
-  contactNumber: Number,
 });
 
 const bridge = new SimpleSchema2Bridge(formSchema);
@@ -65,7 +64,6 @@ const AddService = () => {
                 <TextField name="service" />
                 <TextField name="price" />
                 <TextField name="availableTime" />
-                <TextField name="contactNumber" />
                 <LongTextField name="description" />
                 <SubmitField className="text-center" value="Submit" />
                 <ErrorsField />

@@ -26,7 +26,6 @@ Service.propTypes = {
     image: PropTypes.string,
     description: PropTypes.string,
     availableTime: PropTypes.string,
-    contactNumber: PropTypes.number,
     owner: PropTypes.string,
     _id: PropTypes.string,
   }).isRequired,
